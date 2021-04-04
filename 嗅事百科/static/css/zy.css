@@ -1,0 +1,419 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#content{
+	width: 978px;
+	margin: 0 auto;
+}
+
+
+#top{
+	
+	height: 92px;
+	background-color: #ffd52b;
+}
+#top-in{
+	width: 800px;
+	height: 92px;
+	margin: 0 auto;
+}
+
+#topbutton{
+	height: 92px;
+	width: 62px;
+	background-color: transparent;
+	border: transparent;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 100;
+}
+#topbutton:hover{
+	background-color:khaki;
+}
+
+
+
+
+
+
+
+#middle{
+	margin: 0 auto;
+	width: 978px;
+	height: 100%;
+}
+#middle-head{
+	width: 210px;
+	height:210px;
+	padding: 8px;
+	background-color: white;
+	border: 1px solid #dedede;
+	box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
+}
+
+#middle-head-frame{
+	position: absolute;
+	margin:32px 0px 0px 30px;
+}
+
+#middle-up{
+	
+	font-size: 24px;
+	color: #F1F1F1;
+	width: 978px;
+	height: 220px;
+	background-image: url(../img/9e90ff39ce46fac1ed82d571db807b44.jpg);
+}
+
+#middle-down{
+	width: 976px;
+	height: 63px;
+	border: silver 0.25px solid;
+}
+#middle-down-button{
+	padding-left: 320px;
+}
+#down-button{
+	background-color: transparent;
+	border: transparent;
+	width: 72px;
+	height: 63px;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 400;
+	color: slategray;
+	
+}
+#down-button:hover{
+	
+	color: #F0E68C;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#bottom-left{
+	width:260px;
+	height:879px;
+	color: #708090;
+	margin-top: 18px;
+	margin-right: 18px;
+	
+	float: left;
+}
+#bottom-left-xbzs{
+	width: 258px;
+	height: 160px;
+	border:1px solid #dedede;
+}
+
+#bottom-left-xbzs h3{
+	font-size: 100%;
+	padding: 14px 20px;
+	border-bottom:1px solid #dedede ;
+}
+
+#bottom-left-xbzs ul{
+	padding:9px 20px;
+	
+}
+#bottom-left-xbzs li{
+	line-height: 30px;
+	list-style: none;
+	
+}
+#bottom-left-xbzs span{
+	display: inline-block;
+	width: 80px;
+}
+
+#bottom-left-grzl{
+	margin-top:18px ;
+	width: 258px;
+	height: 190px;
+	border:1px solid #dedede;
+}
+
+#bottom-left-grzl h3{
+	font-size: 100%;
+	padding: 14px 20px;
+	border-bottom:1px solid #dedede ;
+}
+#bottom-left-grzl ul{
+	padding:9px 20px;
+	
+}
+#bottom-left-grzl li{
+	line-height: 30px;
+	list-style: none;
+	
+}
+#bottom-left-grzl span{
+	display: inline-block;
+	width: 80px;
+}
+
+#bottom-left-ysts{
+	margin-top:18px ;
+	width: 258px;
+	height: 133px;
+	border:1px solid #dedede;
+}
+#bottom-left-ysts h3{
+	font-size: 100%;
+	padding: 14px 20px;
+	border-bottom:1px solid #dedede ;
+}
+#bottom-left-ysts div{
+	padding:9px 20px;
+}
+
+#bottom-left-zjfk{
+	margin-top:18px ;
+	width: 258px;
+	height: 178px;
+	border:1px solid #dedede;
+}
+
+#bottom-left-zjfk h3{
+	font-size: 100%;
+	padding: 14px 20px;
+	border-bottom:1px solid #dedede ;
+}
+#bottom-left-zjfk li{
+	float: left;
+	display: block;
+	width: 36px;
+	height: 36px;
+	margin-right: 8px;
+	margin-bottom: 10px;
+	list-style: none;
+}
+#bottom-left-zjfk div{
+	padding:9px 20px;
+}
+#bottom-left-zjfk li img{
+	width: 100%;
+	    height: 100%;
+	    display: block;
+	    border-radius: 50%;
+}
+
+
+
+#bottom-right1{
+	color: #708090;
+	width: 700px;
+	float: left;
+	margin-top: 18px;
+}
+#bottom-right2{
+	color: #708090;
+	width: 700px;
+	float: left;
+	margin-top: 18px;
+}
+#bottom-right3{
+	color: #708090;
+	width: 700px;
+	float: left;
+	margin-top: 18px;
+}
+#bottom-right4{
+	color: #708090;
+	width: 700px;
+	float: left;
+	margin-top: 18px;
+}
+
+
+
+
+#bottom-right2-qiushi{
+	margin: 0 0 18px 0;
+	  
+	border: 1px solid #dedede;
+	background: #fff;
+	position: relative;
+}
+
+
+#edituser{
+	border:1px solid #dedede;
+}
+#bottom-right2-qiushi-user-toolbar{
+	float: right;
+	padding: 14px 20px;
+	color: #949494;
+	text-align: right;
+}
+#bottom-right2-qiushi ul{
+	list-style: none;
+}
+#bottom-right2-qiushi li{
+	 margin: 14px 20px;   
+}
+#img-tp{
+	    width: 100%;
+	    margin-bottom: 16px;
+	    display: block;   
+}
+#img-tx{
+	 width: 60px;
+	 height: 60px;
+	 border-radius: 60px;
+	 vertical-align: middle;
+	 margin-right: 10px;  
+}
+#bottom-right2-qiushi a{
+	 color: #666;
+}
+    
+#bottom-right-pj{
+	width: 700px;
+	height: 100%;
+	border:1px solid #dedede;
+}
+#video{
+	background: #000;
+	margin-bottom: 16px;
+	max-height: 480px;
+	max-width: 100%;
+}
+    
+
+
+#month{
+	position: absolute;
+	margin: 12px 0 0 19px;
+	font-size: 35px;
+}
+#break{
+	position: absolute;
+	margin: 14px 0 0 56px;
+	font-size: 38px;
+}
+#day{
+	position: absolute;
+	margin: 32px 0 0 70px;
+	font-size: 24px;
+}
+#bottom-right-pj{
+	margin-bottom: 18px;
+}
+
+#bottom-right-pj-up{
+	
+	margin: 14px 20px;
+	padding-bottom: 6px;
+	padding: 6px 0 14px 0;
+	border-bottom: 1px solid #dedede;
+}
+#bottom-right-pj ul{
+	
+	list-style: none;
+	margin-left: 100px;
+	padding-bottom: 6px;
+}
+
+#bottom-right-pj-middle{
+	margin: 14px 20px;
+	line-height: 1.6;
+}
+#bottom-right-pj-middle a{
+	color: #708090;
+	text-decoration: none;
+}
+#bottom-right-pj-down{
+	color: #B6B6B6;
+	margin: 14px 20px;
+	line-height: 1.6;
+}
+#bottom-right-pj-down a{
+	color: #B6B6B6;
+	text-decoration: none;
+}
+    
+
+#bottom-right3-pinglun{
+	    margin: 0 0 18px 0;
+	    border: 1px solid #dedede;
+	    background: #fff;
+	    position: relative;
+}
+
+
+#bottom-right3-pinglun-user-toolbar{
+	float: right;
+	    padding: 14px 20px;
+	    color: #949494;
+	    text-align: right;
+}
+#bottom-right3-pinglun-user-date-month{
+	position: absolute;
+	margin: 12px 0 0 19px;
+	font-size: 35px;
+}
+ 
+#bottom-right3-pinglun-user-date-break{
+	position: absolute;
+	    margin: 14px 0 0 56px;
+	    font-size: 38px;
+} 
+
+#bottom-right3-pinglun-user-indent{
+	margin-left: 100px;
+	    padding-bottom: 6px;
+}
+    
+#bottom-right3-pinglun-user-indent li{
+	margin: 14px 20px;
+}
+
+#bottom-right3-pinglun-user-date-day{
+	position: absolute;
+	    margin: 32px 0 0 70px;
+	    font-size: 24px;
+}
+
+#bottom-right3-pinglun-user-date{
+	    color: #d6d6d6;
+}
+
+
+#bottom-right3-pinglun-user-comment-quote{
+	margin: 14px 20px;
+}
+   
+#bottom-right3-pinglun-user-comment-quote ul{
+	background-color: #F2F2F2;
+	 padding: 1px;
+}
+
+
+#bottom-right3-pinglun-user-comment-quote li{
+	margin: 14px 20px;
+}
+
+   
+	
+#bottom-right3-pinglun-user-comment-quote a{
+	vertical-align: middle;
+	display: inline-block;
+}	
+#bottom-right3-pinglun-user-comment-quote img{
+	width: 60px;
+	    height: 60px;
+	    border-radius: 60px;
+	    vertical-align: middle;
+	    margin-right: 10px;
+}

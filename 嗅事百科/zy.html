@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="static/css/zy.css"/>
+		<link rel="stylesheet" type="text/css" href="static/layui/css/layui.css"  media="all"/>
+		<script src="static/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<title>用户主页</title>
+		<script src="static/js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<!--myjs-->
+		
+		<!-- 请求接口js -->
+		<script src="static/js/mainJs/AjaxPost.js" type="text/javascript" charset="utf-8"></script>
+		<script src="static/js/mainJs/Cookies.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./static/js/zy/zy.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		
+			<!--顶部 -->
+			<div id="top">
+				<div id="top-in">
+					<a href="#"><img src="https://static.qiushibaike.com/images/web/v4/index_logo.png?v=2019-2-15-1945" style="float: left;margin-right:50px ;" alt=""></a>
+					<div class="btn-group" role="group" aria-label="Basic example">
+					  <button id="topbutton" type="button" style="outline: none;">热门</button>
+					  <button id="topbutton" type="button" style="outline: none;">24小时</button>
+					  <button id="topbutton" type="button" style="outline: none;">热图</button>
+					  <button id="topbutton" type="button" style="outline: none;">文字</button>
+					  <button id="topbutton" type="button" style="outline: none;">穿越</button>
+					  <button id="topbutton" type="button" style="outline: none;">糗图</button>
+					  <button id="topbutton" type="button" style="outline: none;">新鲜</button>
+					  
+					</div>
+				</div>
+			</div>
+			<div id="content">
+			
+			<!--中间 头像和姓名 -->
+			<div id="middle">
+				<a id="middle-head-frame" href="#" >
+					<img id="middle-head" src="img/5.jpg" >
+				</a>
+				<div id="middle-up">
+					<h2 style="padding: 150px 0px 0px 320px;" id="username">调皮的小狗</h2>
+				</div>
+				
+				<div id="middle-down">
+					<div id="middle-down-button">
+						<button id="down-button" class="down-button-zy" onclick="clickafter(this)" type="button" style="outline: none;border-bottom: 5px solid saddlebrown;">主页</button>
+						<button id="down-button" class="down-button-qs" onclick="clickafter(this)" type="button" style="outline: none;">糗事</button>
+						<button id="down-button" class="down-button-pl" onclick="clickafter(this)" type="button" style="outline: none;">评论</button>
+						<button id="down-button" class="down-button-grxx" onclick="clickafter(this)" type="button" style="outline: none;">个人信息</button>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			<!--底部 -->
+			<div id="bottom-left">
+				
+				<!--糗百指数-->
+				<div id="bottom-left-xbzs">
+					<h3>糗百指数</h3>
+					<ul>
+					
+						<li><span>点赞数:</span>100000</li>
+						<li><span>糗事:</span>100000</li>
+						<li><span>评论数:</span>100000</li>
+						
+					</ul>
+				</div>
+				
+				<!--个人资料-->
+				<div id="bottom-left-grzl">
+					<h3>个人资料</h3>
+					<ul>
+						<li><span>用户id:</span>100000</li>
+						<li><span>性别:</span>100000</li>
+						<li><span>个性签名:</span>100000</li>
+						<li><span>生日:</span>100000</li>
+						
+					</ul>
+				</div>
+				
+				
+				<!--隐私提示-->
+				<div id="bottom-left-ysts">
+					<h3>隐私提示</h3>
+					<div>
+						如果您不希望在互联网上公开自己的糗百信息，请登陆个人中心设置为关闭。
+					</div>
+				</div>
+				
+				<!--最近访客-->
+				<div id="bottom-left-zjfk">
+					<h3>最近访客</h3>
+					<div>
+						<ul>
+							<li>
+								<a href="#"><img src="//pic.qiushibaike.com/system/avtnew/4575/45757466/medium/20210403152139.jpg" > </a>
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+			
+			
+			<!--底部右边  主页-->
+			<div id="bottom-right1">
+				
+				<div id="bottom-right-pj">
+					
+						<div>
+							<span id="month">
+								03
+							</span>
+							<span id="break">
+								&#47;
+							</span>
+							<span id="day">
+								28
+							</span>
+						</div>
+						<ul>
+							<li id="bottom-right-pj-up">
+								<strong>
+									调皮的小汪汪
+								</strong>
+								发表了糗事
+							</li>
+							<li id="bottom-right-pj-middle">
+								<a href="#" target="_blank">
+									好看的皮囊千篇一律，有趣的灵魂二百多斤。
+								</a>
+								<video id="video" width="100%" controls="controls" autoplay="autoplay" poster="//qiubai-video-web.qiushibaike.com/VH2P1JIXFXB78FKY_hd.jpg" preload="auto" playsinline="true" webkit-playsinline="true">
+									<source src="//qiubai-video-web.qiushibaike.com/VH2P1JIXFXB78FKY_hd.mp4" type="video/mp4"></source>
+									
+								</video>
+							</li>
+						
+					
+							<li id="bottom-right-pj-down">
+								261 好笑 &sdot;
+								13 评论 &sdot;
+								发表于
+								<a href="#" target="_blank">
+								2021-03-28
+								</a>
+							</li>
+						</ul>
+					</div>
+					
+			</div>
+			
+			
+			
+			<!--底部右边  糗事-->
+			<div id="bottom-right2">
+				
+				<div id="bottom-right2-qiushi">
+				<div class="bottom-right2-qiushi-user-toolbar">
+				
+				
+				</div>
+				<ul>
+				
+				<li>
+				<img id="img-tx" src="//pic.qiushibaike.com/system/avtnew/3873/38730746/thumb/2018062112485553.JPEG" alt="撩汉大婶" alt="撩汉大婶">撩汉大婶
+				</li>
+				
+				<li>
+				<a href="/article/124206944" target="_blank">
+				老婆你把我叫到卫生间就为这个？
+				<img  id="img-tp" src="//pic.qiushibaike.com/article/image/1YSS3Q9NEOUSN2XF.jpg" >
+				</a>
+				</li>
+				
+				<li>
+				
+				
+				<!--
+				<video controls="controls" preload="meta" width="480" height="480">
+				<source src="//qiubai-video.qiushibaike.com/QK4DKVEAJXJKPLZF_hd.mp4" type="video/mp4" />
+				</video>
+				-->
+				
+				<li>
+				
+				<li>
+				289 好笑 &sdot;
+				0 评论 &sdot;
+				发表于
+				<a href="/history/87792b7d7c02f676aadcc80e25ed5104/" target="_blank">
+				2021-04-03
+				</a>
+				</li>
+				
+				<li >
+				<span></span>
+				
+				
+				<a href="/users/13664198/">
+				黄金脆皮鸡蛋
+				</a>,
+				
+				
+				与另外 284 人觉的好笑
+				</li>
+				
+				</ul>
+				</div>
+
+			</div>
+			
+			
+			
+			<!--底部右边  评论-->
+			<div id="bottom-right3">
+				<div id="bottom-right3-pinglun">
+				
+					<!--判断是否评论，因为加了推荐的帖子-->
+
+					<div id="bottom-right3-pinglun-user-toolbar">
+
+					</div>
+					<div id="bottom-right3-pinglun-user-date">
+						<span id="bottom-right3-pinglun-user-date-month">
+							03
+						</span>
+						<span id="bottom-right3-pinglun-user-date-break">
+							/
+						</span>
+						<span id="bottom-right3-pinglun-user-date-day">
+							31
+						</span>
+					</div>
+					<ul id="bottom-right3-pinglun-user-indent">
+						<li >
+
+							<strong>撩汉大婶</strong>
+								评论了
+							<strong>撩汉大婶</strong>
+								发表的糗事
+
+						</li>
+						<li >
+							噗嗤哈哈！
+						</li>
+					<li id="bottom-right3-pinglun-user-comment-quote">
+						<ul>
+							<li >
+
+								<a href="/users/38730746/">
+									<img src="//pic.qiushibaike.com/system/avtnew/3873/38730746/thumb/2018062112485553.JPEG" alt="撩汉大婶">
+								</a>
+								<a href="/users/38730746/">
+									撩汉大婶
+								</a>
+
+							</li>
+							<li >
+								<a href="/article/124197188" target="_blank">
+									怎么出才能赢？
+								</a>
+							</li>
+
+							<li >
+
+
+
+							</li>
+
+							<li >
+								788 好笑 &sdot;
+								118 评论 &sdot;
+								发表于
+								<a href="/history/5c6debb924d2c594a4585bff29aaeae2/" target="_blank">
+									2021-03-31
+								</a>
+							</li>
+
+							<li>
+								<span"></span>
+
+								<a href="/users/37526989/">
+									随遇～而安6
+								</a>,
+
+								<a href="/users/12330749/">
+									__黑心萝卜
+								</a>,
+
+								和另外 116 人评论了这条糗事
+							</li>
+
+						</ul>
+					</li>
+					</ul>
+
+				</div>
+										
+								
+					
+			
+					
+			</div>
+			
+			
+			
+				
+				
+			<!--底部右边-->
+			<div id="bottom-right4">
+				<div id="edituser">
+					<form class="layui-form" action="" lay-filter="example" style="margin-top:18px ;">
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">用户名称</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="请输入要修改的用户名称" class="layui-input">
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">生日</label>
+					    <div class="layui-input-block">
+					      <input type="password" name="password" placeholder="请输入生日" autocomplete="off" class="layui-input">
+					    </div>
+					  </div>
+					  
+					  
+					  
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">单选框</label>
+					    <div class="layui-input-block">
+					      <input type="radio" name="sex" value="男" title="男" checked="">
+					      <input type="radio" name="sex" value="女" title="女">
+					    </div>
+					  </div>
+					  <div class="layui-form-item layui-form-text">
+					    <label class="layui-form-label">个性签名</label>
+					    <div class="layui-input-block">
+					      <textarea placeholder="请输入内容" class="layui-textarea" name="desc"></textarea>
+					    </div>
+					  </div>
+					 
+					  <div class="layui-form-item">
+					    <div class="layui-input-block">
+							<button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+							<button type="button" class="layui-btn layui-btn-normal">取消</button>
+					    </div>
+					  </div>
+					</form>
+									
+				</div>
+					
+			</div>	
+				
+				
+				
+				
+				
+				
+			
+		</div>
+		
+	</body>
+</html>

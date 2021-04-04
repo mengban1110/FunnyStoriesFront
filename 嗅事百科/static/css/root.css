@@ -1,0 +1,14 @@
+/* 全局变量 */
+
+:root {
+    /* 前景色 */
+    --Frontcolour: #fcc917;
+    /* 背景色 */
+    --Background: #ffffff;
+    /* 标题栏字体 */
+    --titlefontcolour: #7a4624;
+    /* 文章标题颜色 */
+    --headerfontcolour: #000000;
+    /*  文章浅色 */
+    --lightcolor: #b6b6b6;
+}

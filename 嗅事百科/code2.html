@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+		<!-- Google Chrome Frame也可以让IE用上Chrome的引擎: -->
+		<meta name="renderer" content="webkit">
+		<!--国产浏览器高速模式-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>激活用户</title>
+
+		<!-- 公共样式 开始 -->
+		<link rel="stylesheet" type="text/css" href="static/bootstrap-4.5.0-dist/css/bootstrap.min.css"/>
+		
+		<link rel="bookmark" href="static/images/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="static/css/base.css">
+		<link rel="stylesheet" type="text/css" href="static/css/iconfont.css">
+		<script type="text/javascript" src="static/js/framework/jquery-1.11.3.min.js" ></script>
+		<link rel="stylesheet" type="text/css" href="static/layui/css/layui.css">
+	    <!--[if lt IE 9]>
+	      	<script src="framework/html5shiv.min.js"></script>
+	      	<script src="framework/respond.min.js"></script>
+	    <![endif]-->
+		<script type="text/javascript" src="static/layui/layui.js"></script>
+		<!-- 滚动条插件 -->
+		<link rel="stylesheet" type="text/css" href="static/css/jquery.mCustomScrollbar.css">
+		<script src="static/js/framework/jquery-ui-1.10.4.min.js"></script>
+		<script src="static/js/framework/jquery.mousewheel.min.js"></script>
+		<script src="static/js/framework/jquery.mCustomScrollbar.min.js"></script>
+		<script src="static/js/framework/cframe.js"></script><!-- 仅供所有子页面使用 -->
+		<!-- 公共样式 结束 -->
+
+		<!-- 请求接口js -->
+		<script src="static/js/mainJs/AjaxPost.js" type="text/javascript" charset="utf-8"></script>
+		<script src="static/js/mainJs/Cookies.js" type="text/javascript" charset="utf-8"></script>
+		<script src="static/js/code2/code2.js" type="text/javascript" charset="utf-8"></script>
+		
+		<link rel="stylesheet" type="text/css" href="static/css/login.css">
+		<script type="text/javascript" src="static/js/login.js"></script>
+		<style type="text/css">
+			#pic{
+				width: 50%;
+				height: 50%;
+			}
+			#top-pic{
+				margin-bottom: 50px;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<!--主体 开始-->
+		<div class="login_main">
+			<!--轮播图 开始-->
+			<div class="layui-carousel lbt" id="loginLbt">
+				<div carousel-item>
+					<div class="item" style="background: url(static/images/login_bg1.jpg) no-repeat; background-size: cover;"></div>
+					<div class="item" style="background: url(static/images/login_bg2.jpg) no-repeat; background-size: cover;"></div>
+				</div>
+			</div>
+			<!--轮播图 结束-->
+			
+			<div class="form_tzgg">
+				<div id="top-pic">
+					<img id="pic" src="https://static.qiushibaike.com/images/web/v4/index_logo.png?v=2019-2-15-1945" alt="">
+				</div>
+				<div class="form">
+					<form action="#" id="editPWD" method="post" class="layui-form">
+						<div class="title">修改密码</div>
+						<div class="con" onclick="getFocus(this)">
+							<input type="text" id="email" value="2677615497@qq.com" name="email" lay-verify="email" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+						</div>
+						<div class="con" onclick="getFocus(this)">
+							<input type="password" id="newpassword" name="newpassword" lay-verify="password" placeholder="请输入新密码" autocomplete="off" class="layui-input">
+						</div>
+						<div class="con" onclick="getFocus(this)">
+							<input type="text" name="code" id="code" lay-verify="code" placeholder="请输入验证码" autocomplete="off" class="layui-input">
+						</div>
+						
+						<div class="but">
+							<input type="submit" class="btn btn-primary btn-lg btn-block" lay-submit lay-filter="formDemo" value="修改密码" />
+						</div>
+						
+					</form>
+				</div>
+				
+			</div>
+		</div>
+		<!--主体 结束-->
+	</body>
+
+</html>

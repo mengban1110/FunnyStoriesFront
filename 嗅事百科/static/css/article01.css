@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+/**
+ * @desc 首页-文章-图文样式
+ * @author 秋枫
+ * @date 2021年3月20日00:56:46
+ */
+
+
+/* 总容器 */
+
+.article01 {
+    display: flex;
+    width: 100%;
+    height: 130px;
+    padding: 5px;
+}
+
+
+/* 主图片 */
+
+.article01_img {
+    width: 30%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+
+/* 主图片 img*/
+
+.article01_img img {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 内容 */
+
+.article01_content {
+    padding: 10px;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* 内容标题 */
+
+.article01_content_title {
+    font-size: 20px;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+
+/* 帖子信息 */
+
+.article01_content_info {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+
+/* 用户信息 */
+
+.article01_user {
+    display: flex;
+    width: 25%;
+    align-items: center;
+}
+
+.article01_user span {
+    padding-left: 5px;
+    font-size: 8px;
+    color: var(--lightcolor);
+    overflow: hidden;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+
+/* 用户信息-头像 */
+
+.article01_user img {
+    /* padding: 5px; */
+    width: 20px;
+    height: 20px;
+    border-radius: 150px;
+}
