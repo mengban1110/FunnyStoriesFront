@@ -1,5 +1,5 @@
 $(function(){
-	tj();
+	
 	gg();
 	canshu(getQueryString("type"));
 	
@@ -7,12 +7,21 @@ $(function(){
 		$("#fabutieiz").css("display","none");
 	}else{
 		$("#fabutieiz").css("display","inline");
+		
 	}
 	shifoudl();
 	
 })
 
 function canshu(type){
+	if(type==null || type==""){
+		tj();
+		$("#tj").attr("class","");
+		$("#sp").attr("class","");
+		$("#rt").attr("class","");
+		$("#dz").attr("class","");
+		$("#tj").attr("class","pitchon");
+	}
 	if(type==1){
 		tj();
 		$("#tj").attr("class","");
@@ -155,11 +164,26 @@ function add(uid,uname,useravatar,like,comment,postid,posttext,postimg,createtim
 
 //推荐专区
 function tuij(){
-	document.getElementById("tuijian").innerHTML="";
-	tj();
+	window.location.href="index.html?type=1";
 }
 
 //视频专区
+function sps(){
+	window.location.href="index.html?type=2";
+}
+//热图专区
+function rts(){
+	window.location.href="index.html?type=3";
+}
+//段子专区
+function dzs(){
+	window.location.href="index.html?type=4";
+}
+
+
+
+
+
 function ship(){
 	document.getElementById("tuijian").innerHTML="";
 	mypost(getvideopost,{page:1,size:10},function(data){
@@ -207,19 +231,6 @@ function addsp(uid,uname,useravatar,like,comment,postid,posttext,postvideo,creat
 
 
 
-function xuanzhong(obj){
-
-	if(getQueryString("type")!=null){
-	
-		window.location.href="index.html"
-	}
-	
-	$("#tj").attr("class","");
-	$("#sp").attr("class","");
-	$("#rt").attr("class","");
-	$("#dz").attr("class","");
-	$(obj).attr("class","pitchon");
-}
 
 
 //热图
@@ -315,15 +326,23 @@ function gg(){
 		if(data.data.advinfo==null){
 			$("#guanggao").css("display","none");
 		}else{
+			$("#guanggao").append(gggb());
 			data.data.advinfo.forEach(item => {
 				$("#guanggao").append(scgg(item.acontext,item.aimg))
 			})
 		}
 	},"GET")
 }
-
+function gggb(){
+	var div = '<div id="gbgg">\n'+
+					'	<img onclick="guanbi()" src="https://icons.bootcss.com/assets/icons/x.svg" style="width:30px;float: right;cursor: pointer;">\n'+
+					'</div>\n'
+					return div;
+}
 function scgg(acontext,aimg){
-	var div = '<div class="qsub-right-advertising" >\n' +
+	
+	var div = 
+		'<div class="qsub-right-advertising" >\n' +
 	    '\t\t\t\t\t\t<div id="ggtext" style="font-weight: 700;font-size: 18px;overflow:hidden;white-space:normal;word-break:break-all; text-align:center;">\n' +
 	    '\t\t\t\t\t\t\t\ '+acontext+'  n' +
 	    '\t\t\t\t\t\t</div>\n' +
