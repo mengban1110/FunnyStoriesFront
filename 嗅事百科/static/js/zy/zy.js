@@ -56,6 +56,7 @@ function lookuser(){
 			var myname = data.data.postinfo.userinfo.uname;
 			var myuseravatar = data.data.postinfo.userinfo.useravatar;
 			addCookie("useravatar",myuseravatar,24)
+			addCookie("username",myname,24)
 			var img = '<img id="middle-head" src=' + myuseravatar + '>';
 			$("#middle-head-frame").html(img)
 			$("#username").html(myname)
