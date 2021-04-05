@@ -157,6 +157,7 @@ layui.use('upload', function(){
 		        form.append("files", files[i]);
 		    }
 		    form.append("token", getCookie("token"));
+			addCookie("token",getCookie("token"),24);
 			form.append("text",  $("#Contenttext").val())
 		    // form.append("tm",new Date().getTime());
 		    var index = layer.load(0, {shade: false}); //0代表加载的风格，支持0-2

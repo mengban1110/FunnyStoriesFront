@@ -30,20 +30,24 @@ $(function() {
 
 
 
+lookuser();
 
+	
+})
 
+function lookuser(){
 	mypost(lookUser, {
 		"userid": getUrl("userid"),
 		"token": getCookie("token")
 	}, function(data) {
-
+	
 		console.log(data)
 		if (data.code == 200) {
 			tempUid = data.data.postinfo.userinfo.uid;
 			$("#postlikecount").html(data.data.postinfo.count.postlikecount);
 			$("#postcount").html(data.data.postinfo.count.postcount);
 			$("#commentcount").html(data.data.postinfo.count.commentcount);
-
+	
 			$("#uid").html(data.data.postinfo.userinfo.uid);
 			$("#usersex").html(data.data.postinfo.userinfo.usersex);
 			$("#usersign").html(data.data.postinfo.userinfo.usersign);
@@ -51,12 +55,13 @@ $(function() {
 			$("#bottom-right3").html("");
 			var myname = data.data.postinfo.userinfo.uname;
 			var myuseravatar = data.data.postinfo.userinfo.useravatar;
+			addCookie("useravatar",myuseravatar,24)
 			var img = '<img id="middle-head" src=' + myuseravatar + '>';
 			$("#middle-head-frame").html(img)
 			$("#username").html(myname)
 			// $("#middle-head")
 			data.data.postinfo.history.forEach(item => {
-
+	
 				//用户浏览了什么
 				if (data.data.postinfo.postimg == null) {
 					//文本
@@ -65,9 +70,9 @@ $(function() {
 					//图片
 					$("#bottom-right1").append(lytp(item.postid, item.posttext, item.postimg, item.createtime))
 				}
-
-
-
+	
+	
+	
 			})
 			//用户的评论
 			data.data.postcomment.forEach(item => {
@@ -75,7 +80,7 @@ $(function() {
 					$("#bottom-right3").append(pl(myname, item.userinfo.useravatar, item.userinfo.username, item.userinfo.userid,
 						item.commenttext, item.postid))
 				} catch (e) {}
-
+	
 			})
 			$("#bottom-right2").html("");
 			//用户的发帖
@@ -85,8 +90,7 @@ $(function() {
 			})
 		}
 	}, "GET");
-})
-
+}
 
 
 layui.use('form', function() {
@@ -358,7 +362,6 @@ function ft(myname, myuseravatar, createtime, like, comment, postid, posttext, p
 			'\t\t\t\t<li>\n';
 	}
 	var div = front +
-
 		'\t\t\t\t\n' +
 		'\t\t\t\t<li>\n' +
 		'\t\t\t\t' + like + ' 好笑 &sdot;\n' +
@@ -403,7 +406,8 @@ layui.use('upload', function(){
 				tempUsername = $("#userName2").val();
 			},
 			done: function(res) {
-				if(res.code !==200){
+				if(res.code != "200"){
+					console.log(res)
 					alert("你不能修改别人用户");
 					window.location.href = "index.html";
 				}else{
