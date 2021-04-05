@@ -47,6 +47,19 @@ var getvideopost = "/api/post/getvideopost";
 var getphotopost ="/api/post/getphotopost";
 //20 : 获取段子板块
 var gettextpost = "/api/post/gettextpost";
+
+//21 : 获取指定帖子数据
+var getpostbyid = "/api/post/getpostbyid";
+//22 : 点赞指定帖子
+var likethis = "/api/post/likethis";
+//23 : 评论指定帖子、
+var commentthis = "/api/post/commentthis";
+
+
+
+
+
+
 /**
  * 封装ajax
  * 

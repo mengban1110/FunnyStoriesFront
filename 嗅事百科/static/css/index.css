@@ -68,6 +68,10 @@ button {
     height: 100%;
 }
 
+#text:hover{
+	color: salmon;
+}
+
 
 /* 左边广告 */
 
@@ -80,4 +84,55 @@ button {
 .qsub_left_advertising img {
     width: 100%;
     height: 100%;
+}
+.foot {
+    width: 100%;
+    background: #fff;
+    font-size: 14px;
+}
+
+element.style {
+}
+.foot-nav {
+    width: 960px;
+    margin: 0 auto;
+    padding: 20px 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.foot-copyrights {
+    width: 960px;
+    padding: 20px 0;
+    margin: 0 auto;
+    font-size: 12px;
+    text-align: center;
+    border-top: 1px solid #efefef;
+}
+	
+.foot-nav-col {
+    display: inline-block;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding-left: 10%;
+}	
+
+.foot-nav h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+	
+}
+
+li, ol, ul {
+    list-style: none;
+}
+.foot-nav-col ul li {
+    line-height: 1.8;
+}
+.foot a {
+    color: #666;
 }
