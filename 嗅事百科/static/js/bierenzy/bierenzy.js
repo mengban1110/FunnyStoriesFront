@@ -9,7 +9,10 @@ $(function() {
 	$("#bottom-right3").css("display", "none");
 	$("#bottom-right4").css("display", "none");
 
-
+if($("#bottom-right1").html()==null || $("#bottom-right1").html().length==0){
+		
+		$("#bottom-right1").append('<img style="margin-left:200px; margin-top:100px; width:50%;height:50%;" src="static/images/none1.png" >')
+	}
 
 
 
@@ -108,6 +111,10 @@ function clickafter(obj) {
 		$("#bottom-right2").css("display", "none");
 		$("#bottom-right3").css("display", "none");
 		$("#bottom-right4").css("display", "none");
+		if($("#bottom-right1").html()==null || $("#bottom-right1").html().length==0){
+			
+			$("#bottom-right1").append('<img style="margin-left:200px; margin-top:100px; width:50%;height:50%;" src="static/images/none1.png" >')
+		}
 	}
 	if ($(obj).text() == "糗事") {
 
@@ -115,6 +122,10 @@ function clickafter(obj) {
 		$("#bottom-right2").css("display", "inline");
 		$("#bottom-right3").css("display", "none");
 		$("#bottom-right4").css("display", "none");
+		if($("#bottom-right2").html()==null || $("#bottom-right2").html().length==0){
+			
+			$("#bottom-right2").append('<img style="margin-left:200px; margin-top:100px; width:50%;height:50%;" src="static/images/none1.png" >')
+		}
 	}
 	if ($(obj).text() == "评论") {
 
@@ -122,14 +133,12 @@ function clickafter(obj) {
 		$("#bottom-right2").css("display", "none");
 		$("#bottom-right3").css("display", "inline");
 		$("#bottom-right4").css("display", "none");
+		if($("#bottom-right3").html()==null || $("#bottom-right3").html().length==0){
+			
+			$("#bottom-right3").append('<img style="margin-left:200px; margin-top:100px; width:50%;height:50%;" src="static/images/none1.png" >')
+		}
 	}
-	if ($(obj).text() == "个人信息") {
-
-		$("#bottom-right1").css("display", "none");
-		$("#bottom-right2").css("display", "none");
-		$("#bottom-right3").css("display", "none");
-		$("#bottom-right4").css("display", "inline");
-	}
+	
 }
 
 

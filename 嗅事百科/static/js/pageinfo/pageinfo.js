@@ -182,6 +182,16 @@ function teiziwb(uname,uid,useravatar,postcount,postlikecount,like,comment,posti
 
 //图片帖子
 function teizitp(uname,uid,useravatar,postcount,postlikecount,like,comment,postid,posttext,postimg,createtime){
+	
+	postimg = postimg.substr(0,postimg.length-1);
+	postimg = postimg.substr(1,postimg.length);
+	var postimgs = postimg.split(",");
+	
+	var imgs ="";
+	for(var i=0;i<postimgs.length;i++){
+		imgs += '<img class="topic-test-content-img-1" src='+postimgs[i]+' data-preview-group="1616176402934-17-qsub" data-preview-src=""><br/>'
+	}
+	
 	var div='<h1 class="article-title">\n' +
 	    '\t\t\t\t\t'+posttext+'\n' +
 	    '\t\t\t\t\t</h1>\n' +
@@ -193,7 +203,7 @@ function teizitp(uname,uid,useravatar,postcount,postlikecount,like,comment,posti
 	    '\t\t\t\t\t\t<span class="stats-vote">好笑数：<i class="number">'+like+'</i></span>\n' +
 	    '\t\t\t\t\t</div>\n' +
 	    '\t\t\t\t\t<br />\n' +
-		'                        <div class="topic-test-content-text" style="cursor: pointer;" onclick="teizi('+postid+');">'+posttext+'</div><img class="topic-test-content-img-1" src='+postimg+' data-preview-group="1616176402934-17-qsub" data-preview-src=""></div>\n' +
+		'                        <div class="topic-test-content-text" style="cursor: pointer;" onclick="teizi('+postid+');">'+posttext+'</div>'+imgs+'</div>\n' +
 	    '                    <div class="topic-test-bottom">\n' +
 	    '                        <div class="topic-test-bottom-img">\n' +
 	    '                            <div class="topic-test-bottom-img-nr" style="fill: rgb(0, 0, 0);"><svg onclick="dianzan('+postid+');" t="1616177381475" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1147" width="128" height="128"><path d="M512 1024C229.376 1024 0 794.624 0 512S229.376 0 512 0s512 229.376 512 512-229.376 512-512 512z m0-977.408C254.976 46.592 46.592 254.976 46.592 512s208.384 465.408 465.408 465.408 465.408-208.384 465.408-465.408c-0.512-257.024-208.384-464.896-465.408-465.408z" fill="#bfbfbf" id="bian" p-id="1148"></path><path id="limian" d="M268.8 371.2c0 34.304 27.648 61.952 61.952 61.952 34.304 0 61.952-27.648 61.952-61.952 0-34.304-27.648-61.952-61.952-61.952-34.304-0.512-61.952 27.648-61.952 61.952zM630.784 371.2c0 34.304 27.648 61.952 61.952 61.952s61.952-27.648 61.952-61.952c0-34.304-27.648-61.952-61.952-61.952s-61.952 27.648-61.952 61.952zM512 841.216c-155.648-2.56-280.576-129.024-281.088-284.672 0-12.8 10.24-23.04 23.04-23.552l258.048-2.56h259.072c12.8 0 23.04 10.24 23.04 23.04 1.536 157.696-124.928 286.72-282.112 287.744z m-233.472-261.12c12.288 120.32 112.64 212.48 233.472 214.528 122.368-1.536 224.256-95.744 235.008-218.112H512l-233.472 3.584z" fill="#bfbfbf" p-id="1149"></path></svg>\n' +
@@ -324,9 +334,12 @@ function add(uid,uname,useravatar,like,comment,postid,posttext,postimg,createtim
 			'                    </div>\n' +
 			'                </div>'
 	}else{
+		postimg = postimg.substr(0,postimg.length-1);
+		postimg = postimg.substr(1,postimg.length);
+		var postimgs = postimg.split(",");
 			var div = '<div class="article01">\n' +
 			'                    <div class="article01_img" style="cursor: pointer;" onclick="teizi('+postid+');">\n' +
-			'                        <img src='+postimg+' alt="">\n' +
+			'                        <img src='+postimgs[0]+' alt="">\n' +
 			'                    </div>\n' +
 			'                    <div class="article01_content">\n' +
 			'                        <div class="article01_content_title" style="cursor: pointer;"  id="text" onclick="teizi('+postid+');">'+posttext+'</div>\n' +

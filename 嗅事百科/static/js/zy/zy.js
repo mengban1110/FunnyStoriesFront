@@ -6,7 +6,12 @@ $(function() {
 	$("#bottom-right2").css("display", "none");
 	$("#bottom-right3").css("display", "none");
 	$("#bottom-right4").css("display", "none");
-
+	
+	
+	if($("#bottom-right1").html()==null || $("#bottom-right1").html().length==0){
+		
+		$("#bottom-right1").append('<img style="margin-left:200px; margin-top:100px; width:50%;height:50%;" src="static/images/none1.png" >')
+	}
 
 
 
@@ -104,6 +109,11 @@ function clickafter(obj) {
 		$("#bottom-right2").css("display", "none");
 		$("#bottom-right3").css("display", "none");
 		$("#bottom-right4").css("display", "none");
+		if($("#bottom-right1").html()==null || $("#bottom-right1").html().length==0){
+			
+			$("#bottom-right1").append('<img style="margin-left:200px; margin-top:100px; width:50%;height:50%;" src="static/images/none1.png" >')
+		}
+		
 	}
 	if ($(obj).text() == "糗事") {
 
@@ -111,6 +121,12 @@ function clickafter(obj) {
 		$("#bottom-right2").css("display", "inline");
 		$("#bottom-right3").css("display", "none");
 		$("#bottom-right4").css("display", "none");
+	
+		if($("#bottom-right2").html()==null || $("#bottom-right2").html().length==0){
+			
+			$("#bottom-right2").append('<img style="margin-left:200px; margin-top:100px; width:50%;height:50%;" src="static/images/none1.png" >')
+		}
+		
 	}
 	if ($(obj).text() == "评论") {
 
@@ -118,6 +134,11 @@ function clickafter(obj) {
 		$("#bottom-right2").css("display", "none");
 		$("#bottom-right3").css("display", "inline");
 		$("#bottom-right4").css("display", "none");
+		if($("#bottom-right3").html()==null || $("#bottom-right3").html().length==0){
+			
+			$("#bottom-right3").append('<img style="margin-left:200px; margin-top:100px; width:50%;height:50%;" src="static/images/none1.png" >')
+		}
+		
 	}
 	if ($(obj).text() == "个人信息") {
 
@@ -125,6 +146,11 @@ function clickafter(obj) {
 		$("#bottom-right2").css("display", "none");
 		$("#bottom-right3").css("display", "none");
 		$("#bottom-right4").css("display", "inline");
+		if($("#bottom-right4").html()==null || $("#bottom-right4").html().length==0){
+			
+			$("#bottom-right4").append('<img style="margin-left:200px; margin-top:100px; width:50%;height:50%;" src="static/images/none1.png" >')
+		}
+		
 	}
 }
 
@@ -290,6 +316,9 @@ function pl(myname, useravatar, username, userid, commenttext, postid) {
 
 function ft(myname, myuseravatar, createtime, like, comment, postid, posttext, postimg, postvideo) {
 
+			postimg = postimg.substr(0,postimg.length-1);
+			postimg = postimg.substr(1,postimg.length);
+			var postimgs = postimg.split(",");
 	var front = '<div id="bottom-right2-qiushi">\n' +
 		'\t\t\t\t<div class="bottom-right2-qiushi-user-toolbar">\n' +
 		'\t\t\t\t\n' +
@@ -311,7 +340,7 @@ function ft(myname, myuseravatar, createtime, like, comment, postid, posttext, p
 			'\t\t\t\t\n';
 	}
 	if (postimg) {
-		front += '\t\t\t\t<img  id="img-tp" src=' + postimg + ' >\n' +
+		front += '\t\t\t\t<img  id="img-tp" src=' + postimgs[0] + ' >\n' +
 			'\t\t\t\t</a>\n' +
 			'\t\t\t\t</li>\n' +
 			'\t\t\t\t\n';
