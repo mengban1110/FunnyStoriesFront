@@ -10,7 +10,57 @@ button {
 	background-color: transparent;
 	border: transparent;
 }
+#top{
+	
+	height: 92px;
+	background-color: #ffd52b;
+}
+#top-in{
+	width: 2000px;
+	height: 92px;
 
+}
+
+#topbutton{
+	
+	height: 92px;
+	width: 100px;
+	background-color: transparent;
+	border: transparent;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 500;
+}
+#topbutton:hover{
+	background-color:khaki;
+}
+
+#denglu-button{
+	margin-left: 1200px;
+	height: 92px;
+	width: 100px;
+	background-color: transparent;
+	border: transparent;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 800;
+}
+#dengchu-button{
+	margin-left: 1200px;
+	height: 92px;
+	width: 100px;
+	background-color: transparent;
+	border: transparent;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 800;
+}
+#dengchu-button:hover{
+	background-color:khaki;
+}
+#denglu-button:hover{
+	background-color:khaki;
+}
 
 
 /* 总内容 */

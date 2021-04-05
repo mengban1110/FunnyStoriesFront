@@ -8,7 +8,7 @@ $(function(){
 	}else{
 		$("#fabutieiz").css("display","inline");
 	}
-	
+	shifoudl();
 	
 })
 
@@ -356,4 +356,51 @@ function guanbi(){
 
 function tzuser(uid){
 	window.location.href="bierenzy.html?userid="+uid;
+}
+
+
+
+
+
+
+function shifoudl(){
+	if((getCookie("username")==null || getCookie("username")=="")||(getCookie("useravatar")==null || getCookie("useravatar")=="")||(getCookie("token")==null || getCookie("token")=="")){
+		
+		$("#denglu-button").css("display","inline");
+		$("#dengchu-button").css("display","none");
+		$("#userxx").css("display","none");
+	}else{
+	
+		$("#denglu-button").css("display","none");
+		$("#dengchu-button").css("display","inline");
+		$("#userxx").css("display","inline");
+		$("#userxx").append(userjbxx(getCookie("uid"),getCookie("username"),getCookie("useravatar")));
+	}
+}
+
+
+//当前用户信息
+function userjbxx(uid,username,useravatar){
+	var div = '<img src='+useravatar+' onclick="tzzyuser('+uid+');" style="cursor: pointer;width: 40px;height: 40px;border-radius: 60px;vertical-align: middle;margin-right: 10px;" ><span onclick="tzzyuser('+uid+');" style="cursor: pointer;">'+username+'</span>'
+		return div;
+}
+
+
+
+//登陆
+function denglu(){
+	window.location.href="login.html";
+}
+
+//登出
+function dengchu(){
+	addCookie("username","",24);
+	addCookie("useravatar","",24);
+	addCookie("token","",24);
+	addCookie("uid","",24);
+	window.location.href="index.html";
+}
+
+function tzzyuser(uid){
+	window.location.href="zy.html?userid="+uid;
 }
