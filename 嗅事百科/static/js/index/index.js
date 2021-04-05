@@ -2,6 +2,14 @@ $(function(){
 	tj();
 	gg();
 	canshu(getQueryString("type"));
+	
+	if(getCookie("token")==null || getCookie("token")==""){
+		$("#fabutieiz").css("display","none");
+	}else{
+		$("#fabutieiz").css("display","inline");
+	}
+	
+	
 })
 
 function canshu(type){
@@ -59,14 +67,14 @@ function tj(){
 			
 			data.data.postinfo.forEach(item => {
 				
-				$("#tuijian").append(add(item.userinfo.uname,item.userinfo.useravatar,item.count.like,item.count.comment,item.postid,item.posttext,item.postimg,item.createtime,item.postvideo))
+				$("#tuijian").append(add(item.userinfo.uid,item.userinfo.uname,item.userinfo.useravatar,item.count.like,item.count.comment,item.postid,item.posttext,item.postimg,item.createtime,item.postvideo))
 			})
 		}else{
 			console.log("非法调用")
 		}
 	},"GET")
 }
-function add(uname,useravatar,like,comment,postid,posttext,postimg,createtime,postvideo){
+function add(uid,uname,useravatar,like,comment,postid,posttext,postimg,createtime,postvideo){
 	
 	if(postimg==null && postvideo==null){
 		var div = '<div class="article01">\n' +
@@ -84,8 +92,8 @@ function add(uname,useravatar,like,comment,postid,posttext,postimg,createtime,po
 		'                                <span>评论</span>\n' +
 		'                            </div>\n' +
 		'                            <div class="article01_user">\n' +
-		'                                <img src='+useravatar+' alt="">\n' +
-		'                                <span>'+uname+'</span>\n' +
+		'                                <img onclick="tzuser('+uid+')" style="cursor: pointer;" src='+useravatar+' alt="">\n' +
+		'                                <span onclick="tzuser('+uid+')" style="cursor: pointer;">'+uname+'</span>\n' +
 		'                            </div>\n' +
 		'                        </div>\n' +
 		'                    </div>\n' +
@@ -109,8 +117,8 @@ function add(uname,useravatar,like,comment,postid,posttext,postimg,createtime,po
 			'                                <span>评论</span>\n' +
 			'                            </div>\n' +
 			'                            <div class="article01_user">\n' +
-			'                                <img src='+useravatar+' alt="">\n' +
-			'                                <span>'+uname+'</span>\n' +
+			'                                <img onclick="tzuser('+uid+')" style="cursor: pointer;" src='+useravatar+' alt="">\n' +
+			'                                <span onclick="tzuser('+uid+')" style="cursor: pointer;">'+uname+'</span>\n' +
 			'                            </div>\n' +
 			'                        </div>\n' +
 			'                    </div>\n' +
@@ -131,8 +139,8 @@ function add(uname,useravatar,like,comment,postid,posttext,postimg,createtime,po
 			'                                <span>评论</span>\n' +
 			'                            </div>\n' +
 			'                            <div class="article01_user">\n' +
-			'                                <img src='+useravatar+' alt="">\n' +
-			'                                <span>'+uname+'</span>\n' +
+			'                                <img onclick="tzuser('+uid+')" style="cursor: pointer;" src='+useravatar+' alt="">\n' +
+			'                                <span onclick="tzuser('+uid+')" style="cursor: pointer;">'+uname+'</span>\n' +
 			'                            </div>\n' +
 			'                        </div>\n' +
 			'                    </div>\n' +
@@ -160,7 +168,7 @@ function ship(){
 			
 			data.data.postinfo.forEach(item => {
 				
-				$("#tuijian").append(addsp(item.userinfo.uname,item.userinfo.useravatar,item.count.like,item.count.comment,item.postid,item.posttext,item.postvideo,item.createtime))
+				$("#tuijian").append(addsp(item.userinfo.uid,item.userinfo.uname,item.userinfo.useravatar,item.count.like,item.count.comment,item.postid,item.posttext,item.postvideo,item.createtime))
 			})
 		}else{
 			console.log("非法调用")
@@ -170,13 +178,13 @@ function ship(){
 
 
 
-function addsp(uname,useravatar,like,comment,postid,posttext,postvideo,createtime){
+function addsp(uid,uname,useravatar,like,comment,postid,posttext,postvideo,createtime){
 	
 	var div = '<div class="topic-test">\n' +
-    '<div class="topic-test-top"><img class="topic-test-top-img" src='+useravatar+'><span class="topic-test-top-span">'+uname+'</span></div>\n' +
+    '<div class="topic-test-top"><img class="topic-test-top-img" onclick="tzuser('+uid+')" style="cursor: pointer;" src='+useravatar+'><span class="topic-test-top-span" onclick="tzuser('+uid+')" style="cursor: pointer;">'+uname+'</span></div>\n' +
     '	<div class="topic-test-content">\n' +
     '		<div class="topic-test-content-text" style="cursor: pointer;" onclick="teizi('+postid+');">'+posttext+'</div>\n' +
-    '			<video id="video" width="100%" controls="controls" autoplay="autoplay" poster="" preload="auto" playsinline="true" webkit-playsinline="true">\n' +
+    '			<video id="video" width="100%" controls="controls"  poster="" preload="auto" playsinline="true" webkit-playsinline="true">\n' +
     ' 				<source src='+postvideo+' type="video/mp4"></source>\n' +
     '			</video>\n' +
     '		</div>\n' +
@@ -200,6 +208,12 @@ function addsp(uname,useravatar,like,comment,postid,posttext,postvideo,createtim
 
 
 function xuanzhong(obj){
+
+	if(getQueryString("type")!=null){
+	
+		window.location.href="index.html"
+	}
+	
 	$("#tj").attr("class","");
 	$("#sp").attr("class","");
 	$("#rt").attr("class","");
@@ -218,7 +232,7 @@ function ret(){
 			
 			data.data.postinfo.forEach(item => {
 				
-				$("#tuijian").append(addrt(item.userinfo.uname,item.userinfo.useravatar,item.count.like,item.count.comment,item.postid,item.posttext,item.postimg,item.createtime))
+				$("#tuijian").append(addrt(item.userinfo.uid,item.userinfo.uname,item.userinfo.useravatar,item.count.like,item.count.comment,item.postid,item.posttext,item.postimg,item.createtime))
 			})
 		}else{
 			console.log("非法调用")
@@ -226,10 +240,10 @@ function ret(){
 	},"GET")
 }
 
-function addrt(uname,useravatar,like,comment,postid,posttext,postimg,createtime){
+function addrt(uid,uname,useravatar,like,comment,postid,posttext,postimg,createtime){
 	
 	var div = '<div class="topic-test">\n' +
-    '                    <div class="topic-test-top"><img class="topic-test-top-img" src='+useravatar+'><span class="topic-test-top-span">'+uname+'</span></div>\n' +
+    '                    <div class="topic-test-top"><img class="topic-test-top-img" onclick="tzuser('+uid+')" style="cursor: pointer;" src='+useravatar+'><span class="topic-test-top-span" onclick="tzuser('+uid+')" style="cursor: pointer;">'+uname+'</span></div>\n' +
     '                    <div class="topic-test-content">\n' +
     '                        <div class="topic-test-content-text" style="cursor: pointer;" onclick="teizi('+postid+');">'+posttext+'</div><img onclick="teizi('+postid+');"  style="cursor: pointer;" class="topic-test-content-img-1" src='+postimg+' data-preview-group="1616176402934-17-qsub" data-preview-src=""></div>\n' +
     '                    <div class="topic-test-bottom">\n' +                    
@@ -261,7 +275,7 @@ function duz(){
 			
 			data.data.postinfo.forEach(item => {
 				
-				$("#tuijian").append(adddz(item.userinfo.uname,item.userinfo.useravatar,item.count.like,item.count.comment,item.postid,item.posttext,item.createtime))
+				$("#tuijian").append(adddz(item.userinfo.uid,item.userinfo.uname,item.userinfo.useravatar,item.count.like,item.count.comment,item.postid,item.posttext,item.createtime))
 			})
 		}else{
 			console.log("非法调用")
@@ -271,10 +285,10 @@ function duz(){
 	
 }
 
-function adddz(uname,useravatar,like,comment,postid,posttext,createtime){
+function adddz(uid,uname,useravatar,like,comment,postid,posttext,createtime){
 	
 	var div = '<div class="topic-test">\n' +
-    '                    <div class="topic-test-top"><img class="topic-test-top-img" src='+useravatar+'><span class="topic-test-top-span">'+uname+'</span></div>\n' +
+    '                    <div class="topic-test-top"><img class="topic-test-top-img" onclick="tzuser('+uid+')" style="cursor: pointer;" src='+useravatar+'><span class="topic-test-top-span" onclick="tzuser('+uid+')" style="cursor: pointer;">'+uname+'</span></div>\n' +
     '                    <div class="topic-test-content">\n' +
     '                        <div class="topic-test-content-text" style="cursor: pointer;" onclick="teizi('+postid+');">'+posttext+'</div>\n' +
     '                    </div>\n' +
@@ -339,3 +353,7 @@ function guanbi(){
 	},"GET")
 }
 
+
+function tzuser(uid){
+	window.location.href="bierenzy.html?userid="+uid;
+}

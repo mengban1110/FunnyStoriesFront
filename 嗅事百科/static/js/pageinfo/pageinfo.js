@@ -117,10 +117,10 @@ function tiezitx(uname,uid,useravatar,postcount,postlikecount,like,comment,posti
 	'\t\t\t\t<!-- userinfo -->\n' +
 	'\t\t\t\t<a class="side-left-userinfo">\n' +
 	'\t\t\t\t\n' +
-	'\t\t\t\t<img src='+useravatar+' alt="">\n' +
+	'\t\t\t\t<img style="cursor: pointer;" onclick="tzuser('+uid+')" src='+useravatar+' alt="">\n' +
 	'\t\t\t\t\n' +
 	'\t\t\t\t<div class="side-user-top">\n' +
-	'\t\t\t\t<span class="side-user-name">'+uname+'</span>\n' +
+	'\t\t\t\t<span class="side-user-name" style="cursor: pointer;" onclick="tzuser('+uid+')">'+uname+'</span>\n' +
 	'\t\t\t\t\n' +
 	'\t\t\t\t<span class="side-fans-num userF"><i></i>22</span>\n' +
 	'\t\t\t\t\n' +
@@ -228,7 +228,7 @@ function teizisp(uname,uid,useravatar,postcount,postlikecount,like,comment,posti
 	    '\t\t\t\t\t\t<span class="stats-vote">好笑数：<i class="number">'+like+'</i></span>\n' +
 	    '\t\t\t\t\t</div>\n' +
 	    '\t\t\t\t\t<br />\n' +
-	    '\t\t\t\t\t<video id="article-video" controls="" autoplay="" poster="" width="100%" preload="auto" playsinline="true" webkit-playsinline="true">\n' +
+	    '\t\t\t\t\t<video id="article-video" controls=""  poster="" width="100%" preload="auto" playsinline="true" webkit-playsinline="true">\n' +
 	    '\t\t\t\t\t<source src='+postvideo+' type="video/mp4">\n' +
 	    '\t\t\t\t\t</video>\n' +
 		'                    <div class="topic-test-bottom">\n' +
@@ -268,14 +268,14 @@ function tj(){
 			
 			data.data.postinfo.forEach(item => {
 				
-				$("#tuijian").append(add(item.userinfo.uname,item.userinfo.useravatar,item.count.like,item.count.comment,item.postid,item.posttext,item.postimg,item.createtime,item.postvideo))
+				$("#tuijian").append(add(item.userinfo.uid,item.userinfo.uname,item.userinfo.useravatar,item.count.like,item.count.comment,item.postid,item.posttext,item.postimg,item.createtime,item.postvideo))
 			})
 		}else{
 			console.log("非法调用")
 		}
 	},"GET")
 }
-function add(uname,useravatar,like,comment,postid,posttext,postimg,createtime,postvideo){
+function add(uid,uname,useravatar,like,comment,postid,posttext,postimg,createtime,postvideo){
 	if(postimg==null && postvideo==null){
 		var div = '<div class="article01">\n' +
 		'                    <div class="article01_img" style="cursor: pointer;" onclick="teizi('+postid+');">\n' +
@@ -292,8 +292,8 @@ function add(uname,useravatar,like,comment,postid,posttext,postimg,createtime,po
 		'                                <span>评论</span>\n' +
 		'                            </div>\n' +
 		'                            <div class="article01_user">\n' +
-		'                                <img src='+useravatar+' alt="">\n' +
-		'                                <span>'+uname+'</span>\n' +
+		'                                <img onclick="tzuser('+uid+')" style="cursor: pointer;" src='+useravatar+' alt="">\n' +
+		'                                <span onclick="tzuser('+uid+')" style="cursor: pointer;">'+uname+'</span>\n' +
 		'                            </div>\n' +
 		'                        </div>\n' +
 		'                    </div>\n' +
@@ -317,8 +317,8 @@ function add(uname,useravatar,like,comment,postid,posttext,postimg,createtime,po
 			'                                <span>评论</span>\n' +
 			'                            </div>\n' +
 			'                            <div class="article01_user">\n' +
-			'                                <img src='+useravatar+' alt="">\n' +
-			'                                <span>'+uname+'</span>\n' +
+			'                                <img onclick="tzuser('+uid+')" style="cursor: pointer;" src='+useravatar+' alt="">\n' +
+			'                                <span onclick="tzuser('+uid+')" style="cursor: pointer;">'+uname+'</span>\n' +
 			'                            </div>\n' +
 			'                        </div>\n' +
 			'                    </div>\n' +
@@ -339,8 +339,8 @@ function add(uname,useravatar,like,comment,postid,posttext,postimg,createtime,po
 			'                                <span>评论</span>\n' +
 			'                            </div>\n' +
 			'                            <div class="article01_user">\n' +
-			'                                <img src='+useravatar+' alt="">\n' +
-			'                                <span>'+uname+'</span>\n' +
+			'                                <img onclick="tzuser('+uid+')" style="cursor: pointer;" src='+useravatar+' alt="">\n' +
+			'                                <span onclick="tzuser('+uid+')" style="cursor: pointer;">'+uname+'</span>\n' +
 			'                            </div>\n' +
 			'                        </div>\n' +
 			'                    </div>\n' +
@@ -492,11 +492,14 @@ function shifoudl(){
 		$("#denglu-button").css("display","none");
 		$("#dengchu-button").css("display","inline");
 		$("#userxx").css("display","inline");
-		$("#userxx").append(userjbxx(getCookie("username"),getCookie("useravatar")));
+		$("#userxx").append(userjbxx(getCookie("uid"),getCookie("username"),getCookie("useravatar")));
 	}
 }
-function userjbxx(username,useravatar){
-	var div = '<img src='+useravatar+' style="width: 40px;height: 40px;border-radius: 60px;vertical-align: middle;margin-right: 10px;" >'+username+''
+
+
+//当前用户信息
+function userjbxx(uid,username,useravatar){
+	var div = '<img src='+useravatar+' onclick="tzzyuser('+uid+');" style="cursor: pointer;width: 40px;height: 40px;border-radius: 60px;vertical-align: middle;margin-right: 10px;" ><span onclick="tzzyuser('+uid+');" style="cursor: pointer;">'+username+'</span>'
 		return div;
 }
 
@@ -510,6 +513,7 @@ function dengchu(){
 	addCookie("username","",24);
 	addCookie("useravatar","",24);
 	addCookie("token","",24);
+	addCookie("uid","",24);
 	window.location.href="index.html";
 }
 
@@ -533,3 +537,14 @@ function tzretu(){
 function tzduanzi(){
 	window.location.href="index.html?type=4";
 }
+
+
+function tzuser(uid){
+	window.location.href="bierenzy.html?userid="+uid;
+}
+
+function tzzyuser(uid){
+	window.location.href="zy.html?userid="+uid;
+}
+
+
