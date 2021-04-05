@@ -185,7 +185,7 @@ function lywb(postid, posttext, createtime) {
 		'\t\t\t\t\t\t\t<span id="day">\n' +
 		'\t\t\t\t\t\t\t\t' + day + '\n' +
 		'\t\t\t\t\t\t\t</span>\n' +
-		'\t\t\t\t\t\t</div>\n' +
+		'\t\t\t\t\t\t</div style="cursor: pointer;" onclick="tzpost('+postid+')">\n' +
 		'\t\t\t\t\t\t<ul>\n' +
 		'\t\t\t\t\t\t\t<li id="bottom-right-pj-up">\n' +
 		'\t\t\t\t\t\t\t\t<strong>\n' +
@@ -230,7 +230,7 @@ function lytp(postid, posttext, createtime, postimg) {
 		'\t\t\t\t\t\t\t<span id="day">\n' +
 		'\t\t\t\t\t\t\t\t' + day + '\n' +
 		'\t\t\t\t\t\t\t</span>\n' +
-		'\t\t\t\t\t\t</div>\n' +
+		'\t\t\t\t\t\t</div style="cursor: pointer;" onclick="tzpost('+postid+')">\n' +
 		'\t\t\t\t\t\t<ul>\n' +
 		'\t\t\t\t\t\t\t<li id="bottom-right-pj-up">\n' +
 		'\t\t\t\t\t\t\t\t<strong>\n' +
@@ -277,7 +277,7 @@ function pl(myname, useravatar, username, userid, commenttext, postid) {
 		'\t\t\t\t\t\t<span id="bottom-right3-pinglun-user-date-day">\n' +
 		'\t\t\t\t\t\t\t31\n' +
 		'\t\t\t\t\t\t</span>\n' +
-		'\t\t\t\t\t</div>\n' +
+		'\t\t\t\t\t</div style="cursor: pointer;" onclick="tzpost('+postid+')">\n' +
 		'\t\t\t\t\t<ul id="bottom-right3-pinglun-user-indent">\n' +
 		'\t\t\t\t\t\t<li>\n' +
 		'\n' +
@@ -287,17 +287,17 @@ function pl(myname, useravatar, username, userid, commenttext, postid) {
 		'\t\t\t\t\t\t\t发表的糗事\n' +
 		'\n' +
 		'\t\t\t\t\t\t</li>\n' +
-		'\t\t\t\t\t\t<li>\n' +
+		'\t\t\t\t\t\t<li style="cursor: pointer;" onclick="tzpost('+postid+')">\n' +
 		'\t\t\t\t\t\t\t' + commenttext + '\n' +
 		'\t\t\t\t\t\t</li>\n' +
 		'\t\t\t\t\t\t<li id="bottom-right3-pinglun-user-comment-quote">\n' +
 		'\t\t\t\t\t\t\t<ul>\n' +
 		'\t\t\t\t\t\t\t\t<li>\n' +
 		'\n' +
-		'\t\t\t\t\t\t\t\t\t<a href="/users/38730746/">\n' +
+		'\t\t\t\t\t\t\t\t\t<a style="cursor: pointer;" onclick="tzpost('+postid+')">\n' +
 		'\t\t\t\t\t\t\t\t\t\t<img src="' + useravatar + '">\n' +
 		'\t\t\t\t\t\t\t\t\t</a>\n' +
-		'\t\t\t\t\t\t\t\t\t<a href="/users/38730746/">\n' +
+		'\t\t\t\t\t\t\t\t\t<a style="cursor: pointer;" onclick="tzpost('+postid+')">\n' +
 		'\t\t\t\t\t\t\t\t\t\t' + username + '\n' +
 		'\t\t\t\t\t\t\t\t\t</a>\n' +
 		'\n' +
@@ -332,7 +332,7 @@ function ft(myname, myuseravatar, createtime, like, comment, postid, posttext, p
 		'\t\t\t\t<ul>\n' +
 		'\t\t\t\t\n' +
 		'\t\t\t\t<li>\n' +
-		'\t\t\t\t<img id="img-tx" src=' + myuseravatar + '>' + myname + '\n' +
+		'\t\t\t\t<img style="cursor: pointer;" onclick="tzpost('+postid+')" id="img-tx" src=' + myuseravatar + '><span style="cursor: pointer;" onclick="tzpost('+postid+')">' + myname + '</span>\n' +
 		'\t\t\t\t</li>\n' +
 		'\t\t\t\t\n' +
 		'\t\t\t\t<li>\n' +
@@ -345,7 +345,7 @@ function ft(myname, myuseravatar, createtime, like, comment, postid, posttext, p
 			'\t\t\t\t\n';
 	}
 	if (postimg) {
-		front += '\t\t\t\t<img  id="img-tp" src=' + postimgs[0] + ' >\n' +
+		front += '\t\t\t\t<img style="cursor: pointer;" onclick="tzpost('+postid+')" id="img-tp" src=' + postimgs[0] + ' >\n' +
 			'\t\t\t\t</a>\n' +
 			'\t\t\t\t</li>\n' +
 			'\t\t\t\t\n';
@@ -364,11 +364,11 @@ function ft(myname, myuseravatar, createtime, like, comment, postid, posttext, p
 	}
 	var div = front +
 		'\t\t\t\t\n' +
-		'\t\t\t\t<li>\n' +
+		'\t\t\t\t<li style="cursor: pointer;" onclick="tzpost('+postid+')">\n' +
 		'\t\t\t\t' + like + ' 好笑 &sdot;\n' +
 		'\t\t\t\t ' + comment + ' 评论 &sdot;\n' +
 		'\t\t\t\t发表于\n' +
-		'\t\t\t\t<a href="/history/87792b7d7c02f676aadcc80e25ed5104/" target="_blank">\n' +
+		'\t\t\t\t<a style="cursor: pointer;" onclick="tzpost('+postid+')" target="_blank">\n' +
 		'\t\t\t\t2021-04-03\n' +
 		'\t\t\t\t</a>\n' +
 		'\t\t\t\t</li>\n' +
@@ -377,7 +377,7 @@ function ft(myname, myuseravatar, createtime, like, comment, postid, posttext, p
 		'\t\t\t\t<span></span>\n' +
 		'\t\t\t\t\n' +
 		'\t\t\t\t\n' +
-		'\t\t\t\t<a href="/users/13664198/">\n' +
+		'\t\t\t\t<a>\n' +
 		'\t\t\t\t' + myname + '\n' +
 		'\t\t\t\t</a>,\n' +
 		'\t\t\t\t\n' +
@@ -443,4 +443,9 @@ layui.use('upload', function(){
 
 function index(){
 	window.location.href="index.html"
+}
+
+
+function tzpost(postid){
+	window.location.href="pageinfo.html?postid="+postid;
 }
