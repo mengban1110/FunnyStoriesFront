@@ -1,11 +1,19 @@
 
 $(function(){
 	// var postid = getCookie("tzid");
+	
 	var postid = getQueryString("postid")
+	
+	
 	post(postid);
 	postpinglun(postid);
 	gg();
 	shifoudl();
+	if(postid==getCookie("tzid")){
+		
+		$("#bian").attr("fill","red")
+		$("#limian").attr("fill","red")
+	}
 })		
 
 function getQueryString(name) {
@@ -19,32 +27,6 @@ function getQueryString(name) {
 
 
 
-function pagez(){
-	
-		layui.use(['laypage', 'layer'], function() {
-			var laypage = layui.laypage //分页 
-			var layer = layui.layer //弹层
-
-			//分页
-			laypage.render({
-				elem: 'pageDemo', //分页容器的id
-				count: 20, //总页数
-				skin: '#1E9FFF', //自定义选中色值
-				//,skip: true //开启跳页
-				jump: function(obj, first) {
-					$("#pinglun").empty() 
-					post(postid)
-					if (!first) {
-						layer.msg('第' + obj.curr + '页', {
-							offset: 'b'
-						});
-					}
-				}
-			});
-		
-		});
-
-}
 
 function postpinglun(postid){
 	
@@ -52,20 +34,15 @@ function postpinglun(postid){
 		mypost(getpostbyid,{"postid":postid},function(data){
 			console.log(data)
 			if (data.code == 200) {
-			
-					//评论
-					data.data.postcomment.forEach(item => {
-						
-						$("#pinglun").append(pl(item.userinfo.username,item.userinfo.userid,item.commentid,item.commenttext));	
 					
-						
-							
-						
+					$("#pingluncount").html(data.data.postinfo.count.comment);
+					data.data.postcomment.forEach(item => {
+						$("#pinglun").append(pl(item.userinfo.username,item.userinfo.userid,item.commentid,item.commenttext));	
 					})
 				
 			}else{
 				console.log("非法调用")
-			}
+			}	
 		},"GET")
 	}
 
@@ -371,19 +348,19 @@ function teizi(tzid){
 
 //点赞
 function dianzan(tzid){
-	
-	
-		$("#bian").css("background-color","red")
-		$("#limian").css("background-color","red")
-	
-	if(getCookie("dz")!=tzid){
+		
+			
+		
+	if(getCookie("tzid")!=tzid){
 		
 		mypost(likethis,{"postid":tzid,"token":getCookie("token")},function(data){
 			console.log(data)
 			
 			if (data.code == 200) {
+				$("#bian").attr("fill","red")
+				$("#limian").attr("fill","red")
 					document.getElementById("like").innerHTML="";
-					addCookie("dz",tzid,24);
+					addCookie("tzid",tzid,24);
 			}else{
 				alert("点赞失败")
 			}
@@ -421,7 +398,7 @@ function fabu(){
 	
 
 	var pinglunnr = $("#xpinglun").val();
-	var tzid = getCookie("tzid");
+	var tzid = getQueryString("postid");
 	var token = getCookie("token");
 	mypost(commentthis,{"postid":tzid,"commenttext":pinglunnr,"token":token},function(data){
 		console.log(data)
