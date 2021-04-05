@@ -52,6 +52,7 @@ function getQueryString(name) {
 
 
 function tj(){
+	document.getElementById("tuijian").innerHTML="";
 	mypost(getrecommend,{page:1,size:10},function(data){
 		console.log(data)
 		if (data.code == 200) {
