@@ -254,7 +254,7 @@ function teizisp(uname,uid,useravatar,postcount,postlikecount,like,comment,posti
 
 //评论
 function pl(username,userid,commentid,commenttext){
-	var div = '<div id="comment-418111508" class="comment-block clearfix floor-8"><div class="replay">  <a href="/users/43147169/" class="userlogin" target="_blank" title='+username+'>'+username+'：</a>  <span class="body">'+commenttext+'</span></div></div>';
+	var div = '<div id="comment-418111508" class="comment-block clearfix floor-8"><div class="replay">  <a href="bierenzy.html?userid='+userid+'" class="userlogin" target="_blank" title='+username+'>'+username+'：</a>  <span class="body">'+commenttext+'</span></div></div>';
 	
 	return div;
 }

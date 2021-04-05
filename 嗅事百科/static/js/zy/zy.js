@@ -374,8 +374,13 @@ layui.use('upload', function(){
 				tempUsername = $("#userName2").val();
 			},
 			done: function(res) {
+				if(res.code !==200){
+					alert("你不能修改别人用户");
+					window.location.href = "index.html";
+				}else{
 				window.location.href = "zy.html?userid=" + tempUid;
 				console.log(res)
+				}
 			},
 			before: function() {
 				this.data = {
