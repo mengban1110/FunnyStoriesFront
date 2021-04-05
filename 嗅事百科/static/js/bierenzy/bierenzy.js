@@ -1,3 +1,5 @@
+var tempUid;
+
 
 $(function() {
 
@@ -67,8 +69,7 @@ $(function() {
 			//用户的评论
 			data.data.postcomment.forEach(item => {
 				try {
-					$("#bottom-right3").append(pl(myname, item.userinfo.useravatar, item.userinfo.username, item.userinfo.userid,
-						item.commenttext, item.postid))
+					$("#bottom-right3").append(pl(myname, item.userinfo.useravatar, item.userinfo.username, tempUid, item.commenttext))
 				} catch (e) {}
 
 			})
@@ -80,6 +81,9 @@ $(function() {
 			})
 		}
 	}, "GET");
+
+
+
 })
 
 
@@ -228,9 +232,9 @@ function lytp(postid, posttext, createtime, postimg) {
 	return div;
 }
 //用户评论
-function pl(myname, useravatar, username, userid, commenttext, postid) {
+function pl(myname, useravatar, username, userid, commenttext) {
 	var div = '<div id="bottom-right3-pinglun">\n' +
-		'\n' +
+		'\t\t\t\t\n' +
 		'\t\t\t\t\t<!--判断是否评论，因为加了推荐的帖子-->\n' +
 		'\n' +
 		'\t\t\t\t\t<div id="bottom-right3-pinglun-user-toolbar">\n' +
@@ -248,42 +252,31 @@ function pl(myname, useravatar, username, userid, commenttext, postid) {
 		'\t\t\t\t\t\t</span>\n' +
 		'\t\t\t\t\t</div>\n' +
 		'\t\t\t\t\t<ul id="bottom-right3-pinglun-user-indent">\n' +
-		'\t\t\t\t\t\t<li>\n' +
+		'\t\t\t\t\t\t<li >\n' +
 		'\n' +
 		'\t\t\t\t\t\t\t<strong>' + myname + '</strong>\n' +
-		'\t\t\t\t\t\t\t评论了\n' +
+		'\t\t\t\t\t\t\t\t评论了\n' +
 		'\t\t\t\t\t\t\t<strong>' + username + '</strong>\n' +
-		'\t\t\t\t\t\t\t发表的糗事\n' +
+		'\t\t\t\t\t\t\t\t发表的糗事\n' +
 		'\n' +
 		'\t\t\t\t\t\t</li>\n' +
-		'\t\t\t\t\t\t<li>\n' +
+		'\t\t\t\t\t\t<li >\n' +
 		'\t\t\t\t\t\t\t' + commenttext + '\n' +
 		'\t\t\t\t\t\t</li>\n' +
-		'\t\t\t\t\t\t<li id="bottom-right3-pinglun-user-comment-quote">\n' +
-		'\t\t\t\t\t\t\t<ul>\n' +
-		'\t\t\t\t\t\t\t\t<li>\n' +
+		'\t\t\t\t\t<li id="bottom-right3-pinglun-user-comment-quote">\n' +
+		'\t\t\t\t\t\t<ul>\n' +
+		'\t\t\t\t\t\t\t<li >\n' +
 		'\n' +
-		'\t\t\t\t\t\t\t\t\t<a href="/users/38730746/">\n' +
-		'\t\t\t\t\t\t\t\t\t\t<img src="' + useravatar + '">\n' +
-		'\t\t\t\t\t\t\t\t\t</a>\n' +
-		'\t\t\t\t\t\t\t\t\t<a href="/users/38730746/">\n' +
-		'\t\t\t\t\t\t\t\t\t\t' + username + '\n' +
-		'\t\t\t\t\t\t\t\t\t</a>\n' +
-		'\n' +
-		'\t\t\t\t\t\t\t\t</li>\n' +
-		'\t\t\t\t\t\t\t\t<li>\n' +
-		'\t\t\t\t\t\t\t\t\t<a href="pageinfo.html?postid=' + postid + '" target="_blank">\n' +
-		'\t\t\t\t\t\t\t\t\t\t' + commenttext + '\n' +
-		'\t\t\t\t\t\t\t\t\t</a>\n' +
-		'\t\t\t\t\t\t\t\t</li>\n' +
-		'\n' +
-		'\t\t\t\t\t\t\t\t<li>\n' +
+		'\t\t\t\t\t\t\t\t<a href="/users/38730746/">\n' +
+		'\t\t\t\t\t\t\t\t\t<img src=' + useravatar + '>\n' +
+		'\t\t\t\t\t\t\t\t</a>\n' +
+		'\t\t\t\t\t\t\t\t<a href="zy.html?userid=' + userid + '">\n' +
+		'\t\t\t\t\t\t\t\t\t' + username + '\n' +
+		'\t\t\t\t\t\t\t\t</a>\n' +
 		'\n' +
 		'\n' +
 		'\n' +
-		'\t\t\t\t\t\t\t\t</li>\n' +
-		'\t\t\t\t\t</ul>\n' +
-		'\n' +
+		'\t\t\t\t\t\t\t</li>\n' +
 		'\t\t\t\t</div>';
 	return div;
 }
@@ -330,6 +323,8 @@ function ft(myname, myuseravatar, createtime, like, comment, postid, posttext, p
 	}
 	var div = front +
 
+
+
 		'\t\t\t\t\n' +
 		'\t\t\t\t<li>\n' +
 		'\t\t\t\t' + like + ' 好笑 &sdot;\n' +
@@ -356,49 +351,4 @@ function ft(myname, myuseravatar, createtime, like, comment, postid, posttext, p
 		'\t\t\t\t</div>';
 	return div;
 }
-var tempUid;
-var tempBirth = "121212121";
-var tempSign = "121212121";
-var tempUsername = "121212121";
-layui.use('upload', function(){
-  var $ = layui.jquery
-  ,upload = layui.upload;
-	upload.render({
-			elem: '#selecfile',
-			url: domain+changeUserInfo, //改成您自己的上传接口
-			auto: false,
-			bindAction: '#eiditUser',
-			choose: function(obj) {
-				tempBirth = $("#userbirth2").val();
-				tempSign = $("#usersign2").val();
-				tempUsername = $("#userName2").val();
-			},
-			done: function(res) {
-				window.location.href = "zy.html?userid=" + tempUid;
-				console.log(res)
-			},
-			before: function() {
-				this.data = {
-					"uid": tempUid,
-					"username": tempUsername,
-					"usersex": $("input[name='sex']:checked").val(),
-					"userbirth": tempBirth,
-					"usersign": tempSign,
-					"token": getCookie("token")
-					
-				}
-			},
-			// data: {
-			// 	"uid": tempUid,
-			// 	"username": tempUsername,
-			// 	"usersex": $("input[name='sex']:checked").val(),
-			// 	"userbirth": tempBirth,
-			// 	"usersign": tempSign,
-			// 	"token": getCookie("token")
-			// },
-			error(index,upload){
-				window.location.href = "zy.html?userid=" + tempUid;
-			}
-		});
-});
 
