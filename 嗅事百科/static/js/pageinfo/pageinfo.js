@@ -254,7 +254,7 @@ function teizisp(uname,uid,useravatar,postcount,postlikecount,like,comment,posti
 
 //评论
 function pl(username,userid,commentid,commenttext){
-	var div = '<div id="comment-418111508" class="comment-block clearfix floor-8"><div class="replay">  <a href="bierenzy.html?userid='+userid+'" class="userlogin" target="_blank" title='+username+'>'+username+'：</a>  <span class="body">'+commenttext+'</span></div></div>';
+	var div = '<div id="comment-418111508" class="comment-block clearfix floor-8"><div class="replay">  <a style="cursor: pointer;" onclick="tzuser('+userid+')" class="userlogin" target="_blank" title='+username+'>'+username+'：</a>  <span class="body">'+commenttext+'</span></div></div>';
 	
 	return div;
 }
@@ -448,12 +448,20 @@ function gg(){
 		if(data.data.advinfo==null){
 			$("#guanggao").css("display","none");
 		}else{
+			$("#guanggao").append(gggb());
 			data.data.advinfo.forEach(item => {
 				$("#guanggao").append(scgg(item.acontext,item.aimg))
 			})
 		}
 		
 	},"GET")
+}
+
+function gggb(){
+	var div = '<div id="gbgg">\n'+
+					'	<img onclick="guanbi()" src="https://icons.bootcss.com/assets/icons/x.svg" style="width:30px;float: right;cursor: pointer;">\n'+
+					'</div>\n'
+					return div;
 }
 
 function scgg(acontext,aimg){
@@ -540,7 +548,11 @@ function tzduanzi(){
 
 
 function tzuser(uid){
-	window.location.href="bierenzy.html?userid="+uid;
+	if(getCookie("token")==null || getCookie("token")==""){
+		alert("请登录")
+	}else{
+		window.location.href="bierenzy.html?userid="+uid;
+	}
 }
 
 function tzzyuser(uid){

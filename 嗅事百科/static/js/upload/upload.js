@@ -11,6 +11,7 @@ layui.use('upload', function(){
 	,data:{"text":$("#textContent").val(),"token":getCookie("token")}
 	,bindAction: '#btnupload'
     ,done: function(res){
+		console.log(res);
       layer.msg('上传成功');
 	  alert("上传成功")
       console.log(res)
@@ -87,6 +88,7 @@ layui.use('upload', function(){
       });
     }
     ,done: function(res, index, upload){
+		console.log(res);
       if(res.code == 200){ //上传成功
         var tr = demoListView.find('tr#upload-'+ index)
         ,tds = tr.children();

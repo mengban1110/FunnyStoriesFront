@@ -24,7 +24,7 @@
 		<!-- <link rel="stylesheet" type="text/css" href="/static/css/video.css"> -->
 		<link rel="stylesheet" type="text/css" href="static/css/video.css" />
 		<link rel="stylesheet" href="static/layui/css/layui.css" media="all">
-	
+		<link rel="stylesheet" type="text/css" href="static/layui/css/layui.css"/>
 		<script src="./static/js/mainJs/AjaxPost.js" type="text/javascript" charset="utf-8"></script>
 		<script src="./static/js/index/index.js" type="text/javascript" charset="utf-8"></script>
 		<script src="static/js/mainJs/Cookies.js" type="text/javascript" charset="utf-8"></script>
@@ -64,10 +64,11 @@
 					</div>
 					<ul class="nav nav-pills nav-stacked">
 						<li > <button id="tj" onclick="tuij()">推荐</button></li>
-						<li ><button id="sp" onclick="sps()" >视频</button></li>
+						<li ><button id="sp" onclick="sps()">视频</button></li>
 						<li ><button id="rt" onclick="rts()">热图</button></li>
 						<li ><button id="dz" onclick="dzs()">段子</button></li>
 					</ul>
+					
 					<div class="qsub_left_advertising">
 						<img src="//static.qiushibaike.com/images/web/v4/left_code.png?v=0a1153c06294049ad2da58efa408072e" alt="">
 
@@ -127,9 +128,17 @@
 
 					<!-- <hr class="hidden-sm hidden-md hidden-lg"> -->
 				</div>
-				<div class="col-sm-7" id="tuijian">
+				<div class="col-sm-7">
 
+					<div id="tuijian">
+					</div>
+					<div id="example_filter" class="pull-left" style="margin-left: 30%; margin-top: 10px;">
+					<div class="bs-example ">
+						<div id="pageDemo"></div>
+					</div>
 				</div>
+				</div>
+
 				<div class="col-sm-3" id="guanggao" style="position:fixed; right: 10%; top: 10%; width: 300px; height: 900px;">
 					
 

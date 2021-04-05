@@ -15,7 +15,7 @@ $(function(){
 					addCookie("useravatar",data.useravatar,24);
 					addCookie("token",data.token,24);
 					addCookie("uid",data.uid,24);
-					window.location.href = 'zy.html';
+					window.location.href = 'zy.html?userid='+data.uid;
 				}
 			},"POST")
 			return false;

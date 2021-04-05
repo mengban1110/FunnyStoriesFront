@@ -15,7 +15,8 @@ $(function(){
 
 function canshu(type){
 	if(type==null || type==""){
-		tj();
+		// tj();
+		pagezz();
 		$("#tj").attr("class","");
 		$("#sp").attr("class","");
 		$("#rt").attr("class","");
@@ -23,7 +24,8 @@ function canshu(type){
 		$("#tj").attr("class","pitchon");
 	}
 	if(type==1){
-		tj();
+		// tj();
+		pagezz();
 		$("#tj").attr("class","");
 		$("#sp").attr("class","");
 		$("#rt").attr("class","");
@@ -31,7 +33,8 @@ function canshu(type){
 		$("#tj").attr("class","pitchon");
 	}
 	if(type==2){
-		ship();
+		
+		pagezz2();
 		$("#tj").attr("class","");
 		$("#sp").attr("class","");
 		$("#rt").attr("class","");
@@ -39,7 +42,8 @@ function canshu(type){
 		$("#sp").attr("class","pitchon");
 	}
 	if(type==3){
-		ret();
+		
+		pagezz3();
 		$("#tj").attr("class","");
 		$("#sp").attr("class","");
 		$("#rt").attr("class","");
@@ -47,7 +51,8 @@ function canshu(type){
 		$("#rt").attr("class","pitchon");
 	}
 	if(type==4){
-		duz();
+		
+		pagezz4();
 		$("#tj").attr("class","");
 		$("#sp").attr("class","");
 		$("#rt").attr("class","");
@@ -68,9 +73,9 @@ function getQueryString(name) {
 }
 
 
-function tj(){
+function tj(page, size){
 	document.getElementById("tuijian").innerHTML="";
-	mypost(getrecommend,{page:1,size:10},function(data){
+	mypost(getrecommend,{"page":page,"size":size},function(data){
 		console.log(data)
 		if (data.code == 200) {
 			
@@ -169,14 +174,17 @@ function tuij(){
 
 //视频专区
 function sps(){
+	
 	window.location.href="index.html?type=2";
 }
 //热图专区
 function rts(){
+	
 	window.location.href="index.html?type=3";
 }
 //段子专区
 function dzs(){
+	
 	window.location.href="index.html?type=4";
 }
 
@@ -184,9 +192,9 @@ function dzs(){
 
 
 
-function ship(){
+function ship(page,size){
 	document.getElementById("tuijian").innerHTML="";
-	mypost(getvideopost,{page:1,size:10},function(data){
+	mypost(getvideopost,{"page":page,"size":size},function(data){
 		console.log(data)
 		if (data.code == 200) {
 			
@@ -234,10 +242,10 @@ function addsp(uid,uname,useravatar,like,comment,postid,posttext,postvideo,creat
 
 
 //热图
-function ret(){
+function ret(page,size){
 	document.getElementById("tuijian").innerHTML="";
 	
-	mypost(getphotopost,{page:1,size:10},function(data){
+	mypost(getphotopost,{"page":page,"size":size},function(data){
 		console.log(data)
 		if (data.code == 200) {
 			
@@ -278,9 +286,9 @@ function addrt(uid,uname,useravatar,like,comment,postid,posttext,postimg,createt
 
 
 //段子
-function duz(){
+function duz(page,size){
 	document.getElementById("tuijian").innerHTML="";
-	mypost(gettextpost,{page:1,size:10},function(data){
+	mypost(gettextpost,{"page":page,"size":size},function(data){
 		console.log(data)
 		if (data.code == 200) {
 			
@@ -374,7 +382,12 @@ function guanbi(){
 
 
 function tzuser(uid){
-	window.location.href="bierenzy.html?userid="+uid;
+	if(getCookie("token")==null || getCookie("token")==""){
+		alert("请登录")
+	}else{
+		window.location.href="bierenzy.html?userid="+uid;
+	}
+	
 }
 
 
@@ -420,6 +433,156 @@ function dengchu(){
 	window.location.href="index.html";
 }
 
+
+
+
 function tzzyuser(uid){
 	window.location.href="zy.html?userid="+uid;
+}
+
+
+
+
+
+
+function pagezz() {
+	var size = 5;
+	var pagecount = null;
+
+	mypost(getrecommend, {}, function(data) {
+		console.log(data)
+		if (data.code == 200) {
+			pagecount = data.data.postinfo.length;
+		} else {
+			console.log("非法调用")
+		}
+	}, "GET")
+
+	layui.use(['laypage', 'layer'], function() {
+		var laypage = layui.laypage //分页 
+		var layer = layui.layer //弹层
+		// 	//分页
+		laypage.render({
+			elem: 'pageDemo', //分页容器的id
+			count: pagecount, //数据总数量
+			limit: size,
+			skin: '#1E9FFF', //自定义选中色值
+			//,skip: true //开启跳页
+			jump: function(obj, first) {
+				$("#tuijian").empty();
+				tj(obj.curr, size)
+				if (!first) {
+					layer.msg('第' + obj.curr + '页', {
+						offset: 'b'
+					});
+				}
+			}
+		});
+	});
+}
+
+function pagezz2() {
+	var size = 5;
+	var pagecount = null;
+
+	mypost(getvideopost, {}, function(data) {
+		console.log(data)
+		if (data.code == 200) {
+			pagecount = data.data.postinfo.length;
+		} else {
+			console.log("非法调用")
+		}
+	}, "GET")
+
+	layui.use(['laypage', 'layer'], function() {
+		var laypage = layui.laypage //分页 
+		var layer = layui.layer //弹层
+		// 	//分页
+		laypage.render({
+			elem: 'pageDemo', //分页容器的id
+			count: pagecount, //数据总数量
+			limit: size,
+			skin: '#1E9FFF', //自定义选中色值
+			//,skip: true //开启跳页
+			jump: function(obj, first) {
+				$("#tuijian").empty();
+				ship(obj.curr, size)
+				if (!first) {
+					layer.msg('第' + obj.curr + '页', {
+						offset: 'b'
+					});
+				}
+			}
+		});
+	});
+}
+function pagezz3() {
+	var size = 5;
+	var pagecount = null;
+
+	mypost(getphotopost, {}, function(data) {
+		console.log(data)
+		if (data.code == 200) {
+			pagecount = data.data.postinfo.length;
+		} else {
+			console.log("非法调用")
+		}
+	}, "GET")
+
+	layui.use(['laypage', 'layer'], function() {
+		var laypage = layui.laypage //分页 
+		var layer = layui.layer //弹层
+		// 	//分页
+		laypage.render({
+			elem: 'pageDemo', //分页容器的id
+			count: pagecount, //数据总数量
+			limit: size,
+			skin: '#1E9FFF', //自定义选中色值
+			//,skip: true //开启跳页
+			jump: function(obj, first) {
+				$("#tuijian").empty();
+				ret(obj.curr, size)
+				if (!first) {
+					layer.msg('第' + obj.curr + '页', {
+						offset: 'b'
+					});
+				}
+			}
+		});
+	});
+}
+function pagezz4() {
+	var size = 5;
+	var pagecount = null;
+
+	mypost(gettextpost, {}, function(data) {
+		console.log(data)
+		if (data.code == 200) {
+			pagecount = data.data.postinfo.length;
+		} else {
+			console.log("非法调用")
+		}
+	}, "GET")
+
+	layui.use(['laypage', 'layer'], function() {
+		var laypage = layui.laypage //分页 
+		var layer = layui.layer //弹层
+		// 	//分页
+		laypage.render({
+			elem: 'pageDemo', //分页容器的id
+			count: pagecount, //数据总数量
+			limit: size,
+			skin: '#1E9FFF', //自定义选中色值
+			//,skip: true //开启跳页
+			jump: function(obj, first) {
+				$("#tuijian").empty();
+				duz(obj.curr, size)
+				if (!first) {
+					layer.msg('第' + obj.curr + '页', {
+						offset: 'b'
+					});
+				}
+			}
+		});
+	});
 }
