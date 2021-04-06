@@ -108,12 +108,12 @@ function tiezitx(uname,uid,useravatar,postcount,postlikecount,like,comment,posti
 	'\t\t\t\t<div class="side-line2">好笑</div>\n' +
 	'\t\t\t\t</div>\n' +
 	'\t\t\t\t<div class="side-detail">\n' +
-	'\t\t\t\t<div class="side-line1">'+postlikecount+'</div>\n' +
-	'\t\t\t\t<div class="side-line2">粉丝</div>\n' +
-	'\t\t\t\t</div>\n' +
-	'\t\t\t\t<div class="side-detail">\n' +
 	'\t\t\t\t<div class="side-line1">'+postcount+'</div>\n' +
 	'\t\t\t\t<div class="side-line2">糗事</div>\n' +
+	'\t\t\t\t</div>\n' +
+	'\t\t\t\t<div class="side-detail">\n' +
+	'\t\t\t\t<div class="side-line1">'+comment+'</div>\n' +
+	'\t\t\t\t<div class="side-line2">本帖评论</div>\n' +
 	'\t\t\t\t</div>\n' +
 	'\t\t\t\t</div>\n' +
 	'\t\t\t\t</a>\n' +
@@ -450,7 +450,7 @@ function gg(){
 
 function gggb(){
 	var div = '<div id="gbgg">\n'+
-					'	<img onclick="guanbi()" src="https://icons.bootcss.com/assets/icons/x.svg" style="width:30px;position:fixed;cursor: pointer;">\n'+
+					'	<img onclick="guanbi()" src="https://icons.bootcss.com/assets/icons/x.svg" style="width:30px;float: right;cursor: pointer;">\n'+
 					'</div>\n'
 					return div;
 }
@@ -461,7 +461,7 @@ function scgg(acontext,aimg){
 	    '\t\t\t\t\t\t\t\ '+acontext+'' +
 	    '\t\t\t\t\t\t</div>\n' +
 	    '\t\t\t\t\t\t<img src='+aimg+'\n' +
-	    '\t\t\t\t\t\t alt="" style="margin-bottom:8px;margin-top:-8px;margin-left:35px;width:200px;">\n' +
+	    '\t\t\t\t\t\t alt="" style="margin-bottom:10px;margin-top:10px;">\n' +
 	    '\t\t\t\t\t</div>'
 		return div;
 }
