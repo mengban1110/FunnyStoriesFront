@@ -450,7 +450,7 @@ function gg(){
 
 function gggb(){
 	var div = '<div id="gbgg">\n'+
-					'	<img onclick="guanbi()" src="https://icons.bootcss.com/assets/icons/x.svg" style="width:30px;float: right;cursor: pointer;">\n'+
+					'	<img onclick="guanbi()" src="https://icons.bootcss.com/assets/icons/x.svg" style="width:30px;position:fixed;cursor: pointer;">\n'+
 					'</div>\n'
 					return div;
 }
@@ -458,10 +458,10 @@ function gggb(){
 function scgg(acontext,aimg){
 	var div = '<div class="qsub-right-advertising" >\n' +
 	    '\t\t\t\t\t\t<div id="ggtext" style="font-weight: 700;font-size: 18px;overflow:hidden;white-space:normal;word-break:break-all; text-align:center;">\n' +
-	    '\t\t\t\t\t\t\t\ '+acontext+'  n' +
+	    '\t\t\t\t\t\t\t\ '+acontext+'' +
 	    '\t\t\t\t\t\t</div>\n' +
 	    '\t\t\t\t\t\t<img src='+aimg+'\n' +
-	    '\t\t\t\t\t\t alt="" style="margin-bottom:10px;margin-top:10px;">\n' +
+	    '\t\t\t\t\t\t alt="" style="margin-bottom:8px;margin-top:-8px;margin-left:35px;width:200px;">\n' +
 	    '\t\t\t\t\t</div>'
 		return div;
 }
