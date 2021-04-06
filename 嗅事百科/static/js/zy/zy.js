@@ -1,6 +1,7 @@
 
 $(function() {
 	
+	userxx();
 
 	$("#bottom-right1").css("display", "inline");
 	$("#bottom-right2").css("display", "none");
@@ -34,6 +35,34 @@ lookuser();
 
 	
 })
+
+
+function userxx(){
+	var uid = getCookie("uid");
+	var token = getCookie("token");
+	mypost(getUserInfo,{"uid":uid,"token":token},function(data){
+		console.log(data)
+		if(data.code== 200){
+		
+			$("#userName2").attr("placeholder",data.data.uname)
+			$("#userbirth2").attr("placeholder",data.data.userbirth)
+			
+			if(data.data.usersex=="男"){
+				$("#sex").attr("checked","")
+			}else{
+				$("#sex1").attr("checked","")
+			}
+			
+			
+			$("#usersign2").attr("placeholder",data.data.usersign)
+			
+		}
+	},"POST")
+	
+}
+
+
+
 
 function lookuser(){
 	mypost(lookUser, {
