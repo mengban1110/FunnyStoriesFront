@@ -1,6 +1,6 @@
 
 $(function() {
-
+	
 
 	$("#bottom-right1").css("display", "inline");
 	$("#bottom-right2").css("display", "none");
@@ -89,6 +89,14 @@ function lookuser(){
 				$("#bottom-right2").append(ft(myname, myuseravatar, item.createtime, item.count.like, item.count.comment,
 					item.postid, item.posttext, item.postimg, item.postvideo))
 			})
+		}else{
+			alert("登陆失效");
+			addCookie("uid","",24);
+			addCookie("username","",24);
+			addCookie("useravatar","",24);
+			addCookie("token","",24);
+			window.location.href="index.html"
+			
 		}
 	}, "GET");
 }
