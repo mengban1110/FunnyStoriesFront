@@ -361,7 +361,7 @@ function scgg(acontext,aimg){
 	var div = 
 		'<div class="qsub-right-advertising" >\n' +
 	    '\t\t\t\t\t\t<div id="ggtext" style="font-weight: 700;font-size: 18px;overflow:hidden;white-space:normal;word-break:break-all; text-align:center;">\n' +
-	    '\t\t\t\t\t\t\t\ '+acontext+'  n' +
+	    '\t\t\t\t\t\t\t\ '+acontext+'' +
 	    '\t\t\t\t\t\t</div>\n' +
 	    '\t\t\t\t\t\t<img src='+aimg+'\n' +
 	    '\t\t\t\t\t\t alt="" style="margin-bottom:10px;margin-top:10px;">\n' +
