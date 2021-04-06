@@ -329,9 +329,7 @@ function pl(myname, useravatar, username, userid, commenttext, postid) {
 
 function ft(myname, myuseravatar, createtime, like, comment, postid, posttext, postimg, postvideo) {
 
-			postimg = postimg.substr(0,postimg.length-1);
-			postimg = postimg.substr(1,postimg.length);
-			var postimgs = postimg.split(",");
+			
 	var front = '<div id="bottom-right2-qiushi">\n' +
 		'\t\t\t\t<div class="bottom-right2-qiushi-user-toolbar">\n' +
 		'\t\t\t\t\n' +
@@ -353,6 +351,9 @@ function ft(myname, myuseravatar, createtime, like, comment, postid, posttext, p
 			'\t\t\t\t\n';
 	}
 	if (postimg) {
+		postimg = postimg.substr(0,postimg.length-1);
+		postimg = postimg.substr(1,postimg.length);
+		var postimgs = postimg.split(",");
 		front += '\t\t\t\t<img style="cursor: pointer;" onclick="tzpost('+postid+')" id="img-tp" src=' + postimgs[0] + ' >\n' +
 			'\t\t\t\t</a>\n' +
 			'\t\t\t\t</li>\n' +
@@ -416,9 +417,12 @@ layui.use('upload', function(){
 			},
 			done: function(res) {
 				if(res.code != "200"){
-					console.log(res)
+					if(res.code == "-2"){
+						alert("请全部填写")
+					}else{
 					alert("你不能修改别人用户");
 					window.location.href = "index.html";
+					}
 				}else{
 				window.location.href = "zy.html?userid=" + tempUid;
 				console.log(res)

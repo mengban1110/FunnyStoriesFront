@@ -59,11 +59,11 @@ function post(postid){
 				$("#col-sm-2").append(tiezitx(data.data.postinfo.userinfo.uname,data.data.postinfo.userinfo.uid,data.data.postinfo.userinfo.useravatar,data.data.postinfo.userinfo.postcount,data.data.postinfo.userinfo.postlikecount,data.data.postinfo.count.like,data.data.postinfo.count.comment,data.data.postinfo.postid,data.data.postinfo.posttext,data.data.postinfo.createtime))
 				
 				//帖子内容
-				if(data.data.postinfo.postimg=="" && data.data.postinfo.postvideo==null){
+				if((data.data.postinfo.postimg=="" || data.data.postinfo.postimg==null) && data.data.postinfo.postvideo==null){
 				$("#teizinr").append(teiziwb(data.data.postinfo.userinfo.uname,data.data.postinfo.userinfo.uid,data.data.postinfo.userinfo.useravatar,data.data.postinfo.userinfo.postcount,data.data.postinfo.userinfo.postlikecount,data.data.postinfo.count.like,data.data.postinfo.count.comment,data.data.postinfo.postid,data.data.postinfo.posttext,data.data.postinfo.createtime))
 				}else if(data.data.postinfo.postvideo=="" || data.data.postinfo.postvideo==null){
 				$("#teizinr").append(teizitp(data.data.postinfo.userinfo.uname,data.data.postinfo.userinfo.uid,data.data.postinfo.userinfo.useravatar,data.data.postinfo.userinfo.postcount,data.data.postinfo.userinfo.postlikecount,data.data.postinfo.count.like,data.data.postinfo.count.comment,data.data.postinfo.postid,data.data.postinfo.posttext,data.data.postinfo.postimg,data.data.postinfo.createtime))
-				}else if(data.data.postinfo.postimg==""){
+				}else if(data.data.postinfo.postimg=="" || data.data.postinfo.postimg==null){
 				$("#teizinr").append(teizisp(data.data.postinfo.userinfo.uname,data.data.postinfo.userinfo.uid,data.data.postinfo.userinfo.useravatar,data.data.postinfo.userinfo.postcount,data.data.postinfo.userinfo.postlikecount,data.data.postinfo.count.like,data.data.postinfo.count.comment,data.data.postinfo.postid,data.data.postinfo.posttext,data.data.postinfo.postvideo,data.data.postinfo.createtime))
 				}
 				
@@ -405,28 +405,29 @@ function fabu(){
 		if (data.code == 200) {
 				
 				alert("评论成功")
+				$("#xpinglun").val("");
+				document.getElementById("pingluncount").innerHTML="";
+				document.getElementById("pinglun").innerHTML="";
+				mypost(getpostbyid,{"postid":tzid},function(data){
+					console.log(data)
+					if (data.code == 200) {
+							
+							$("#pingluncount").html(data.data.postinfo.count.comment);
+							data.data.postcomment.forEach(item => {
+								$("#pinglun").append(pl(item.userinfo.username,item.userinfo.userid,item.commentid,item.commenttext));	
+							})
+						
+					}else{
+						console.log("非法调用")
+					}
+				},"GET")
 				
 		}else{
 			alert("评论失败")
 		}
 		
 		
-		$("#xpinglun").val("");
-		document.getElementById("pingluncount").innerHTML="";
-		document.getElementById("pinglun").innerHTML="";
-		mypost(getpostbyid,{"postid":tzid},function(data){
-			console.log(data)
-			if (data.code == 200) {
-					
-					$("#pingluncount").html(data.data.postinfo.count.comment);
-					data.data.postcomment.forEach(item => {
-						$("#pinglun").append(pl(item.userinfo.username,item.userinfo.userid,item.commentid,item.commenttext));	
-					})
-				
-			}else{
-				console.log("非法调用")
-			}
-		},"GET")
+		
 	},"POST")
 }
 

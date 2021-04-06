@@ -175,7 +175,7 @@ layui.use('upload', function(){
 						window.location.href = "index.html";
 		            } else {
 		                // layer.msg(result.msg, {icon: 5});
-						alert("发帖失败请重试")
+						alert(result.msg);
 						window.location.href = "index.html";
 		            }
 		        }
