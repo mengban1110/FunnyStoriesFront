@@ -1,4 +1,4 @@
-var domain = "http://localhost:8080/FunnyStories" //项目domin
+var domain = "https://funnyapi.cn1.utools.club/FunnyStories" //项目domin
 
 //2.主页数据
 //1 : 注册
