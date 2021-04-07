@@ -450,11 +450,10 @@ function gg(){
 
 function gggb(){
 	var div = '<div id="gbgg">\n'+
-					'	<img onclick="guanbi()" src="https://icons.bootcss.com/assets/icons/x.svg" style="width:30px; float: right;cursor: pointer;position: fixed;">\n'+
+					'	<img onclick="guanbi()" src="https://icons.bootcss.com/assets/icons/x.svg" style="width:30px;position:fixed;cursor: pointer;margin-top: -2px;">\n'+
 					'</div>\n'
 					return div;
 }
-
 
 function scgg(acontext,aimg){
 	var div = '<div class="qsub-right-advertising" style="border-radius: 10px; margin-bottom: 20px;">\n' +
@@ -462,10 +461,12 @@ function scgg(acontext,aimg){
 	    '\t\t\t\t\t\t\t\ '+acontext+'' +
 	    '\t\t\t\t\t\t</div>\n' +
 	    '\t\t\t\t\t\t<img src='+aimg+'\n' +
-	    '\t\t\t\t\t\t alt="" style="margin-bottom:8px;margin-top:-8px;margin-left:26px;width:200px;border-radius: 30%;">\n' +
+	    '\t\t\t\t\t\t alt="" style="margin-bottom:8px;margin-top:-8px;width:200px;border-radius: 30%;">\n' +
 	    '\t\t\t\t\t</div>'
 		return div;
 }
+
+
 
 //关闭广告
 function guanbi(){
