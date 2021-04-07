@@ -450,7 +450,7 @@ function gg(){
 
 function gggb(){
 	var div = '<div id="gbgg">\n'+
-					'	<img onclick="guanbi()" src="https://icons.bootcss.com/assets/icons/x.svg" style="width:30px;float: right;cursor: pointer;">\n'+
+					'	<img onclick="guanbi()" src="https://icons.bootcss.com/assets/icons/x.svg" style="width:30px; float: right;cursor: pointer;position: fixed;">\n'+
 					'</div>\n'
 					return div;
 }
