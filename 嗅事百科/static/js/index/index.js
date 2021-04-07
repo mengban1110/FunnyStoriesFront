@@ -421,7 +421,7 @@ function shifoudl(){
 
 //当前用户信息
 function userjbxx(uid,username,useravatar){
-	var div = '<img src='+useravatar+' onclick="tzzyuser('+uid+');" style="cursor: pointer;width: 40px;height: 40px;border-radius: 60px;vertical-align: middle;margin-right: 10px;" ><span onclick="tzzyuser('+uid+');" style="cursor: pointer;">'+username+'</span>'
+	var div = '<img src='+useravatar+' onclick="tzzyuser('+uid+');" style="cursor: pointer;width: 40px;height: 40px;border-radius: 60px;vertical-align: middle;margin-right: 10px;margin-left: -10px;" ><span onclick="tzzyuser('+uid+');" style="cursor: pointer;">'+username+'</span>'
 		return div;
 }
 
