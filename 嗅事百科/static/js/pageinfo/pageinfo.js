@@ -461,7 +461,7 @@ function scgg(acontext, aimg) {
         '\t\t\t\t\t\t\t\ ' + acontext + '' +
         '\t\t\t\t\t\t</div>\n' +
         '\t\t\t\t\t\t<img src=' + aimg + '\n' +
-        '\t\t\t\t\t\t alt="" style="margin-bottom:8px;margin-top:-8px;border-radius: 30%;">\n' +
+        '\t\t\t\t\t\t alt="" style="margin-bottom:8px;margin-top:-8px;border-radius: 20px;">\n' +
         '\t\t\t\t\t</div>'
     return div;
 }
