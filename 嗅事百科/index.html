@@ -1,279 +1,299 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<title>糗事百科</title>
+<head>
+    <meta charset="utf-8">
+    <title>糗事百科</title>
 
-		<link rel="icon" href="https://www.qiushibaike.com/favicon.ico" type="image/x-icon" />
-		<!-- <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
-		<link rel="stylesheet" type="text/css" href="static/css/bootstrap/bootstrap.min.css" />
-		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<!-- 主题样式 -->
-		<!-- <link rel="stylesheet" href="/static/css/index.css"> -->
-		<link rel="stylesheet" type="text/css" href="static/css/index.css" />
-		<!-- 全局常量 -->
-		<!-- <link rel="stylesheet" type="text/css" href="/static/css/root.css"> -->
-		<link rel="stylesheet" type="text/css" href="static/css/root.css" />
-		<!-- 文章样式-图文样式 -->
-		<!-- <link rel="stylesheet" type="text/css" href="/static/css/article01.css"> -->
-		<link rel="stylesheet" type="text/css" href="./static/css/article01.css" />
-		<!-- 文章样式-其他样式 -->
-		<!-- <link rel="stylesheet" type="text/css" href="/static/css/article02.css"> -->
-		<link rel="stylesheet" type="text/css" href="./static/css/article02.css" />
-		<!-- 视频播放器 -->
-		<!-- <link rel="stylesheet" type="text/css" href="/static/css/video.css"> -->
-		<link rel="stylesheet" type="text/css" href="static/css/video.css" />
-		<link rel="stylesheet" href="static/layui/css/layui.css" media="all">
-		<link rel="stylesheet" type="text/css" href="static/layui/css/layui.css" />
-		<script src="./static/js/mainJs/AjaxPost.js" type="text/javascript" charset="utf-8"></script>
-		<script src="./static/js/index/index.js" type="text/javascript" charset="utf-8"></script>
-		<script src="static/js/mainJs/Cookies.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="icon" href="https://www.qiushibaike.com/favicon.ico" type="image/x-icon" />
+    <!-- <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap/bootstrap.min.css" />
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- 主题样式 -->
+    <!-- <link rel="stylesheet" href="/static/css/index.css"> -->
+    <link rel="stylesheet" type="text/css" href="static/css/index.css" />
+    <!-- 全局常量 -->
+    <!-- <link rel="stylesheet" type="text/css" href="/static/css/root.css"> -->
+    <link rel="stylesheet" type="text/css" href="static/css/root.css" />
+    <!-- 文章样式-图文样式 -->
+    <!-- <link rel="stylesheet" type="text/css" href="/static/css/article01.css"> -->
+    <link rel="stylesheet" type="text/css" href="./static/css/article01.css" />
+    <!-- 文章样式-其他样式 -->
+    <!-- <link rel="stylesheet" type="text/css" href="/static/css/article02.css"> -->
+    <link rel="stylesheet" type="text/css" href="./static/css/article02.css" />
+    <!-- 视频播放器 -->
+    <!-- <link rel="stylesheet" type="text/css" href="/static/css/video.css"> -->
+    <link rel="stylesheet" type="text/css" href="static/css/video.css" />
+    <link rel="stylesheet" href="static/layui/css/layui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="static/layui/css/layui.css" />
+    <script src="./static/js/mainJs/AjaxPost.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./static/js/index/index.js" type="text/javascript" charset="utf-8"></script>
+    <script src="static/js/mainJs/Cookies.js" type="text/javascript" charset="utf-8"></script>
 
-		<script src="static/js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="static/layui/layui.js" charset="utf-8"></script>
-		<!-- 注意：如果你直接复制所有代码到本地，上述 JS 路径需要改成你本地的 -->
-		<script src="static/js/upload/upload.js" type="text/javascript" charset="utf-8"></script>
-	</head>
+    <script src="static/js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="static/layui/layui.js" charset="utf-8"></script>
+    <!-- 注意：如果你直接复制所有代码到本地，上述 JS 路径需要改成你本地的 -->
+    <script src="static/js/upload/upload.js" type="text/javascript" charset="utf-8"></script>
+</head>
 
-	<body>
+<body>
 
-		<div id="top">
-			<div id="top-in">
-				<a href="index.html"><img src="https://static.qiushibaike.com/images/web/v4/index_logo.png?v=2019-2-15-1945" style="float: left;margin-right:50px ;"
-					 alt=""></a>
+    <!-- <div id="top">
+        <div id="top-in">
+            <a href="index.html"><img src="https://static.qiushibaike.com/images/web/v4/index_logo.png?v=2019-2-15-1945" style="float: left;margin-right:50px ;" alt=""></a>
 
-				<button id="denglu-button" type="button" style="outline: none;" onclick="denglu()">登陆</button>
-				<div id="">
-					<button id="dengchu-button" type="button" style="outline: none;display: none;" onclick="dengchu()">登出</button>
-					<div id="userxx" style="width: 100px;margin-top: 30px;float: right;">
-					</div>
+            <button id="denglu-button" type="button" style="outline: none;" onclick="denglu()">登陆</button>
+            <div id="">
+                <button id="dengchu-button" type="button" style="outline: none;display: none;" onclick="dengchu()">登出</button>
+                <div id="userxx" style="width: 100px;margin-top: 30px;float: right;">
+                </div>
+            </div>
+        </div>
+    </div> -->
 
-
-				</div>
-
-
-			</div>
-
-		</div>
-
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-2" style="margin: 0px 100px 0px -100px;">
-					<div class="logo">
-						<img src="https://static.qiushibaike.com/images/web/v4/index_logo.png?v=2019-2-15-1945" alt="">
-					</div>
-					<ul class="nav nav-pills nav-stacked">
-						<li> <button id="tj" onclick="tuij()">推荐</button></li>
-						<li><button id="sp" onclick="sps()">视频</button></li>
-						<li><button id="rt" onclick="rts()">热图</button></li>
-						<li><button id="dz" onclick="dzs()">段子</button></li>
-					</ul>
-
-					<div class="qsub_left_advertising">
-						<img src="//static.qiushibaike.com/images/web/v4/left_code.png?v=0a1153c06294049ad2da58efa408072e" alt="">
-
-					</div>
+    <nav class="navbar qsub-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
+				</button>
+                <a class="navbar-brand qsub-colour-pro-font" href="#"></a>
+            </div>
 
 
-
-					<!--模态框-->
-					<div id="motaikuang">
-						<button type="button" id="fabutieiz" style="background-color: var(--Frontcolour); border: transparent; font-size: 24px; margin-top: 60px;outline: none;"
-						 class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">发帖</button>
-
-						<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							<div class="modal-dialog" style="width: 1000px; margin-bottom: 0.625rem;">
-								<div class="modal-content">
-
-									<div class="layui-upload" style="margin-bottom: 20px; text-align: center;">
-										<div class="modal-header" style="margin-bottom:20px;">
-											<h5 class="modal-title" id="exampleModalLabel">发布帖子</h5>
-										</div>
-										<button type="button" class="layui-btn layui-btn-normal" id="testList">选择图片</button> <button type="button"
-										 class="layui-btn" id="test5"><i class="layui-icon"></i>选择视频</button>
-										<br>
-										<br>
-
-										<div class="layui-form-item layui-form-text">
-											<label class="layui-form-label" style="width: 100px;">帖子内容:</label>
-											<div class="layui-input-block">
-												<textarea placeholder="请输入内容" id="Contenttext" id="textContent" class="layui-textarea"></textarea>
-											</div>
-										</div>
-
-										<div class="layui-upload-list" style="margin-bottom: 100px;">
-											<table class="layui-table">
-												<thead>
-													<tr>
-														<th>文件名</th>
-														<th>大小</th>
-														<th>操作</th>
-													</tr>
-												</thead>
-												<tbody id="demoList"></tbody>
-											</table>
-										</div>
-
-										<button type="button" class="layui-btn" id="btnupload" style="margin-top: 3%;">开始上传</button>
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="javascript:tuij()">推荐</a></li>
+                    <li><a href="javascript:sps()">视频</a></li>
+                    <li><a href="javascript:rts()">热图</a></li>
+                    <li><a href="javascript:dzs()">段子</a></li>
+                    <li><a id="denglu-button" href="javascript:denglu()">登录</a>
+                        <a id="dengchu-button" style="outline: none;display: none;" href="javascript:denglu()">登录</a>
+                    </li>
+                    <li><a href="javascript:denglu()">注册</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 
 
 
-					<!-- <hr class="hidden-sm hidden-md hidden-lg"> -->
-				</div>
-				<div class="col-sm-7">
+    <div class="container">
+        <div class="row">
 
-					<div id="tuijian">
-					</div>
-					<div id="example_filter" class="pull-left" style="margin-left: 30%; margin-top: 10px;">
-						<div class="bs-example ">
-							<div id="pageDemo"></div>
-						</div>
-					</div>
-				</div>
+            <div class="col-sm-2 hidden-xs hidden-sm" style="margin: 0px 100px 0px -100px;">
+                <div class="logo">
+                    <img src="https://static.qiushibaike.com/images/web/v4/index_logo.png?v=2019-2-15-1945" alt="">
+                </div>
+                <ul class="nav nav-pills nav-stacked">
+                    <li> <button id="tj" onclick="tuij()">推荐</button></li>
+                    <li><button id="sp" onclick="sps()">视频</button></li>
+                    <li><button id="rt" onclick="rts()">热图</button></li>
+                    <li><button id="dz" onclick="dzs()">段子</button></li>
+                </ul>
 
-				<div class="col-sm-3" id="guanggao" style="position: fixed;right: -1%;width: 250px;height: 700px;overflow-y: scroll;background-color: #ffda58;border-radius: 20px;">
-					<div style="text-align: center; font-size: 18px;font-weight:bold; color: black; margin:10px 0px 15px 0px;">
-						广告
-					</div>
-					<div style="text-align: center;margin: -15px 0px 15px 0px;">(点击蓝色标题可跳转)</div>
-				</div>
+                <div class="qsub_left_advertising">
+                    <img src="//static.qiushibaike.com/images/web/v4/left_code.png?v=0a1153c06294049ad2da58efa408072e" alt="">
 
-			</div>
-
-		</div>
-
-		<div class="jumbotron text-center imp" style="background-color: white;">
-			<img style="width: 608px;" src="//static.qiushibaike.com/images/web/v4/bottom_banner.png?v=abe550db6041a436de88f4fa95f9f7ed">
-		</div>
+                </div>
 
 
-		<div class="foot">
-			<div class="foot-nav clearfix">
-				<div class="foot-nav-col">
-					<h3>
-						关于
-					</h3>
-					<ul>
-						<li>
-							<a href="https://hr.qiushibaike.com/about.html" target="_blank" rel="nofollow">
+
+                <!--模态框-->
+                <div id="motaikuang">
+                    <button type="button" id="fabutieiz" style="background-color: var(--Frontcolour); border: transparent; font-size: 24px; margin-top: 60px;outline: none;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">发帖</button>
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" style="width: 1000px; margin-bottom: 0.625rem;">
+                            <div class="modal-content">
+
+                                <div class="layui-upload" style="margin-bottom: 20px; text-align: center;">
+                                    <div class="modal-header" style="margin-bottom:20px;">
+                                        <h5 class="modal-title" id="exampleModalLabel">发布帖子</h5>
+                                    </div>
+                                    <button type="button" class="layui-btn layui-btn-normal" id="testList">选择图片</button> <button type="button" class="layui-btn" id="test5"><i class="layui-icon"></i>选择视频</button>
+                                    <br>
+                                    <br>
+
+                                    <div class="layui-form-item layui-form-text">
+                                        <label class="layui-form-label" style="width: 100px;">帖子内容:</label>
+                                        <div class="layui-input-block">
+                                            <textarea placeholder="请输入内容" id="Contenttext" id="textContent" class="layui-textarea"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="layui-upload-list" style="margin-bottom: 100px;">
+                                        <table class="layui-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>文件名</th>
+                                                    <th>大小</th>
+                                                    <th>操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="demoList"></tbody>
+                                        </table>
+                                    </div>
+
+                                    <button type="button" class="layui-btn" id="btnupload" style="margin-top: 3%;">开始上传</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- <hr class="hidden-sm hidden-md hidden-lg"> -->
+            </div>
+            <div class="col-sm-7">
+
+                <div id="tuijian">
+                </div>
+                <div id="example_filter" class="" style="margin-left: 30%; margin-top: 10px;">
+                    <div class="bs-example ">
+                        <div id="pageDemo"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 qsub-guanggao" id="guanggao">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="jumbotron text-center imp" style="background-color: white;">
+        <img style="width: 608px;" src="//static.qiushibaike.com/images/web/v4/bottom_banner.png?v=abe550db6041a436de88f4fa95f9f7ed">
+    </div>
+
+
+    <div class="foot">
+        <div class="foot-nav clearfix">
+            <div class="foot-nav-col">
+                <h3>
+                    关于
+                </h3>
+                <ul>
+                    <li>
+                        <a href="https://hr.qiushibaike.com/about.html" target="_blank" rel="nofollow">
 								关于糗百
 							</a>
-						</li>
-						<li>
-							<a href="https://hr.qiushibaike.com/social.html" target="_blank" rel="nofollow">
+                    </li>
+                    <li>
+                        <a href="https://hr.qiushibaike.com/social.html" target="_blank" rel="nofollow">
 								加入我们
 							</a>
-						</li>
-						<li>
-							<a href="https://hr.qiushibaike.com/about.html?tag=3" target="_blank" rel="nofollow">
+                    </li>
+                    <li>
+                        <a href="https://hr.qiushibaike.com/about.html?tag=3" target="_blank" rel="nofollow">
 								联系方式
 							</a>
-						</li>
-					</ul>
-				</div>
-				<div class="foot-nav-col">
-					<h3>
-						帮助
-					</h3>
-					<ul>
-						<li>
-							<a href="//about.qiushibaike.com/feedback.html" target="_blank" rel="nofollow">
+                    </li>
+                </ul>
+            </div>
+            <div class="foot-nav-col">
+                <h3>
+                    帮助
+                </h3>
+                <ul>
+                    <li>
+                        <a href="//about.qiushibaike.com/feedback.html" target="_blank" rel="nofollow">
 								在线反馈
 							</a>
-						</li>
-						<li>
-							<a href="//about.qiushibaike.com/touch_agreement.html" target="_blank" rel="nofollow">
+                    </li>
+                    <li>
+                        <a href="//about.qiushibaike.com/touch_agreement.html" target="_blank" rel="nofollow">
 								用户协议
 							</a>
-						</li>
-						<li>
-							<a href="//about.qiushibaike.com/law/privacy.html" target="_blank" rel="nofollow">
+                    </li>
+                    <li>
+                        <a href="//about.qiushibaike.com/law/privacy.html" target="_blank" rel="nofollow">
 								隐私政策
 							</a>
-						</li>
-					</ul>
-				</div>
-				<div class="foot-nav-col">
-					<h3>
-						关注
-					</h3>
-					<ul>
-						<li>
-							<a href="#" class="foot-wechat">
+                    </li>
+                </ul>
+            </div>
+            <div class="foot-nav-col">
+                <h3>
+                    关注
+                </h3>
+                <ul>
+                    <li>
+                        <a href="#" class="foot-wechat">
 								微信
 
 							</a>
-						</li>
-						<li>
-							<a href="http://weibo.com/qiushibaike" target="_blank" rel="external nofollow">
+                    </li>
+                    <li>
+                        <a href="http://weibo.com/qiushibaike" target="_blank" rel="external nofollow">
 								新浪微博
 							</a>
-						</li>
-						<li>
-							<a href="http://user.qzone.qq.com/1492495058" target="_blank" rel="external nofollow">
+                    </li>
+                    <li>
+                        <a href="http://user.qzone.qq.com/1492495058" target="_blank" rel="external nofollow">
 								QQ空间
 							</a>
-						</li>
-					</ul>
-				</div>
-				<div class="foot-nav-col">
-					<h3>
-						推荐
-					</h3>
-					<ul>
-						<li>
-							<a href="/joke/" target="_blank">
+                    </li>
+                </ul>
+            </div>
+            <div class="foot-nav-col">
+                <h3>
+                    推荐
+                </h3>
+                <ul>
+                    <li>
+                        <a href="/joke/" target="_blank">
 								搞笑合集
 							</a>
-						</li>
-						<li>
-							<a href="/history/" target="_blank">
+                    </li>
+                    <li>
+                        <a href="/history/" target="_blank">
 								历史回顾
 							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="foot-copyrights">
-				<p><a style="color:#333" href="https://beian.miit.gov.cn">互联网ICP备案：京ICP备14028348号-1</a></p>
-				<p>
-					<span>广播电视节目制作经营许可证：（京）字第08319号</span>
-					<span>网络文化经营许可证：
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="foot-copyrights">
+            <p><a style="color:#333" href="https://beian.miit.gov.cn">互联网ICP备案：京ICP备14028348号-1</a></p>
+            <p>
+                <span>广播电视节目制作经营许可证：（京）字第08319号</span>
+                <span>网络文化经营许可证：
 						<img src="//static.qiushibaike.com/images/wenhuajingying.png?v=f5f3976cf4be787ad2be202a19d40823" style="width: 20px; height: 20px; vertical-align: top;">京网文[2020]0625-100号
 					</span>
-				</p>
-				<p style="margin-top: 8px">增值电信业务经营许可证：京ICP证140448号</p>
-				<!-- <p style="margin-top: 8px"><span>营业性演出许可证：京演(机构)(2018)1940号</span></p> -->
-				<p>
-					<span>计算机信息网络国际联网单位备案：<a style="color:#333" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502031601"
+            </p>
+            <p style="margin-top: 8px">增值电信业务经营许可证：京ICP证140448号</p>
+            <!-- <p style="margin-top: 8px"><span>营业性演出许可证：京演(机构)(2018)1940号</span></p> -->
+            <p>
+                <span>计算机信息网络国际联网单位备案：<a style="color:#333" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502031601"
 						 rel="nofollow"><img style="vertical-align: top;" src="//static.qiushibaike.com/images/beian.png?v=d0289dc0a46fc5b15b3363ffa78cf6c7">京公网安备11010502031601号</a></span>
-				</p>
-				<br>
-				<p style="margin-top: 8px">
-					<a style="color:#333" href="https://www.12377.cn/">网上有害信息举报专区</a>
-				</p>
-				<p>
-					<span>违法和不良信息举报电话：18126520579</span>
-					<span>邮箱：kefu@qiushibaike.com</span>
-				</p>
-				<br>
-				<p style="margin-top: 8px">
-					友际无限（北京）科技有限公司
-				</p>
-				<p>
-					<span>© Qiushibaike.com 糗事百科版权所有</span>
-				</p>
-			</div>
-		</div>
-	</body>
+            </p>
+            <br>
+            <p style="margin-top: 8px">
+                <a style="color:#333" href="https://www.12377.cn/">网上有害信息举报专区</a>
+            </p>
+            <p>
+                <span>违法和不良信息举报电话：18126520579</span>
+                <span>邮箱：kefu@qiushibaike.com</span>
+            </p>
+            <br>
+            <p style="margin-top: 8px">
+                友际无限（北京）科技有限公司
+            </p>
+            <p>
+                <span>© Qiushibaike.com 糗事百科版权所有</span>
+            </p>
+        </div>
+    </div>
+</body>
 
 </html>

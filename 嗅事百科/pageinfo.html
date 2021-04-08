@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<title>糗事百科</title>
-		<link rel="icon" href="https://www.qiushibaike.com/favicon.ico" type="image/x-icon" />
-		<!-- <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
-		<link rel="stylesheet" type="text/css" href="static/css/bootstrap/bootstrap.min.css" />
-		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<!-- 主题样式 -->
-		<!-- <link rel="stylesheet" href="/static/css/index.css"> -->
+<head>
+    <meta charset="utf-8">
+    <title>糗事百科</title>
+    <link rel="icon" href="https://www.qiushibaike.com/favicon.ico" type="image/x-icon" />
+    <!-- <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap/bootstrap.min.css" />
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- 主题样式 -->
+    <link rel="stylesheet" href="./static/css/index.css">
 
-		<!-- 全局常量 -->
-		<!-- <link rel="stylesheet" type="text/css" href="/static/css/root.css"> -->
-		<link rel="stylesheet" type="text/css" href="static/css/root.css" />
-		<!-- 文章样式-图文样式 -->
-		<!-- <link rel="stylesheet" type="text/css" href="/static/css/article01.css"> -->
-		<link rel="stylesheet" type="text/css" href="./static/css/article01.css" />
-		<!-- 文章样式-其他样式 -->
-		<!-- <link rel="stylesheet" type="text/css" href="/static/css/article02.css"> -->
-		<link rel="stylesheet" type="text/css" href="./static/css/article02.css" />
-		<!-- 视频播放器 -->
-		<!-- <link rel="stylesheet" type="text/css" href="/static/css/video.css"> -->
-		<link rel="stylesheet" type="text/css" href="static/css/video.css" />
+    <!-- 全局常量 -->
+    <!-- <link rel="stylesheet" type="text/css" href="/static/css/root.css"> -->
+    <link rel="stylesheet" type="text/css" href="./static/css/root.css" />
+    <!-- 文章样式-图文样式 -->
+    <!-- <link rel="stylesheet" type="text/css" href="/static/css/article01.css"> -->
+    <link rel="stylesheet" type="text/css" href="./static/css/article01.css" />
+    <!-- 文章样式-其他样式 -->
+    <!-- <link rel="stylesheet" type="text/css" href="/static/css/article02.css"> -->
+    <link rel="stylesheet" type="text/css" href="./static/css/article02.css" />
+    <!-- 视频播放器 -->
+    <!-- <link rel="stylesheet" type="text/css" href="/static/css/video.css"> -->
+    <link rel="stylesheet" type="text/css" href="static/css/video.css" />
 
-		<link rel="stylesheet" type="text/css" href="static/css/pageinfo.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/pageinfo.css" />
 
-		<script src="static/js/pageinfo/pageinfo.js" type="text/javascript" charset="utf-8"></script>
-		<script src="static/js/mainJs/Cookies.js" type="text/javascript" charset="utf-8"></script>
-		<script src="static/js/mainJs/AjaxPost.js" type="text/javascript" charset="utf-8"></script>
+    <script src="static/js/pageinfo/pageinfo.js" type="text/javascript" charset="utf-8"></script>
+    <script src="static/js/mainJs/Cookies.js" type="text/javascript" charset="utf-8"></script>
+    <script src="static/js/mainJs/AjaxPost.js" type="text/javascript" charset="utf-8"></script>
 
-	</head>
+</head>
 
-	<body>
+<body>
 
-		<div id="top" style="margin-bottom: 20px;">
+    <!-- <div id="top" style="margin-bottom: 20px;">
 			<div id="top-in">
 				<a href="index.html"><img src="https://static.qiushibaike.com/images/web/v4/index_logo.png?v=2019-2-15-1945" style="float: left;margin-right:50px ;"
 					 alt=""></a>
@@ -55,185 +55,218 @@
 				</div>
 			</div>
 
-		</div>
+		</div> -->
 
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-2" id="col-sm-2" style="margin: 0px 100px 0px -100px;">
-
-				</div>
-				<div class="col-sm-7">
-					<div id="teizinr">
-
-					</div>
-
-					<!--评论-->
-					<div class="comments-wrapper" id="all-cmt">
-						<div id="qiushi_comments_124171311" class="comments">
-							<div id="r124171311" class="comments-list comments-all clearfix" style="border: none; margin-top: 30px; min-height: auto;">
-								<div class="comment-title">所有评论</div>
-								<div class="comment-list clearfix" style="display: block;" id="pinglun"></div>
-								<div class="comment-loader" style="display: none;">正在加载评论，请稍后...</div>
+    <nav class="navbar qsub-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>                        
+					</button>
+                <a class="navbar-brand qsub-colour-pro-font" href="#"></a>
+            </div>
 
 
-								<!-- pagination 分页-->
-								<div id="example_filter" class="pull-right">
-									<div class="bs-example">
-										<div id="pageDemo"></div>
-									</div>
-								</div>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="javascript:tztuijian()">推荐</a></li>
+                    <li><a href="javascript:tzshipin()">视频</a></li>
+                    <li><a href="javascript:tzretu()">热图</a></li>
+                    <li><a href="javascript:tzduanzi()">段子</a></li>
+                    <li><a id="denglu-button" href="javascript:denglu()">登录</a>
+                        <a id="dengchu-button" style="outline: none;display: none;" href="javascript:denglu()">登录</a>
+                    </li>
+                    <li><a href="javascript:denglu()">注册</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2  hidden-xs hidden-sm" id="col-sm-2" style="">
+
+            </div>
+            <div class="col-sm-7">
+                <div id="teizinr">
+
+                </div>
+
+                <!--评论-->
+                <div class="comments-wrapper" id="all-cmt">
+                    <div id="qiushi_comments_124171311" class="comments">
+                        <div id="r124171311" class="comments-list comments-all clearfix" style="border: none; margin-top: 30px; min-height: auto;">
+                            <div class="comment-title">所有评论</div>
+                            <div class="comment-list clearfix" style="display: block;" id="pinglun"></div>
+                            <div class="comment-loader" style="display: none;">正在加载评论，请稍后...</div>
 
 
-							</div>
-						</div>
-					</div>
+                            <!-- pagination 分页-->
+                            <div id="example_filter" class="pull-right">
+                                <div class="bs-example">
+                                    <div id="pageDemo"></div>
+                                </div>
+                            </div>
 
 
-					<div id="tuijian" style="margin-top: 50px;">
-
-					</div>
-
-
+                        </div>
+                    </div>
+                </div>
 
 
+                <div id="tuijian" style="margin-top: 50px;">
 
-
-
-				</div>
-				<div class="col-sm-3" id="guanggao" style="position: fixed;right: -1%;width: 250px;height: 700px;overflow-y: scroll;background-color: #ffda58;border-radius: 20px;">
-					<div style="text-align: center; font-size: 18px;font-weight:bold; color: black; margin:10px 0px 15px 0px;">
-						广告链接
-					</div>
-					<div style="text-align: center;margin: -15px 0px 15px 0px;">(点击蓝色标题可跳转)</div>
-				</div>
-			</div>
-
-
-			<div class="jumbotron text-center imp" style="background-color: white;">
-				<img style="width: 608px;" src="//static.qiushibaike.com/images/web/v4/bottom_banner.png?v=abe550db6041a436de88f4fa95f9f7ed">
-			</div>
+                </div>
 
 
 
-			<div class="foot">
-				<div class="foot-nav clearfix">
-					<div class="foot-nav-col">
-						<h3>
-							关于
-						</h3>
-						<ul>
-							<li>
-								<a href="https://hr.qiushibaike.com/about.html" target="_blank" rel="nofollow">
+
+
+
+
+            </div>
+            <!-- <div class="col-sm-3" id="guanggao" style="position: fixed;right: -1%;width: 250px;height: 700px;overflow-y: scroll;background-color: #ffda58;border-radius: 20px;">
+                <div style="text-align: center; font-size: 18px;font-weight:bold; color: black; margin:10px 0px 15px 0px;">
+                    广告链接
+                </div>
+                <div style="text-align: center;margin: -15px 0px 15px 0px;">(点击蓝色标题可跳转)</div>
+			</div> -->
+            <div class="col-sm-3  qsub-guanggao" id="guanggao">
+
+            </div>
+
+
+
+        </div>
+
+
+        <div class="jumbotron text-center imp" style="background-color: white;">
+            <img style="width: 608px;" src="//static.qiushibaike.com/images/web/v4/bottom_banner.png?v=abe550db6041a436de88f4fa95f9f7ed">
+        </div>
+
+
+
+        <div class="foot">
+            <div class="foot-nav clearfix">
+                <div class="foot-nav-col">
+                    <h3>
+                        关于
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="https://hr.qiushibaike.com/about.html" target="_blank" rel="nofollow">
 									关于糗百
 								</a>
-							</li>
-							<li>
-								<a href="https://hr.qiushibaike.com/social.html" target="_blank" rel="nofollow">
+                        </li>
+                        <li>
+                            <a href="https://hr.qiushibaike.com/social.html" target="_blank" rel="nofollow">
 									加入我们
 								</a>
-							</li>
-							<li>
-								<a href="https://hr.qiushibaike.com/about.html?tag=3" target="_blank" rel="nofollow">
+                        </li>
+                        <li>
+                            <a href="https://hr.qiushibaike.com/about.html?tag=3" target="_blank" rel="nofollow">
 									联系方式
 								</a>
-							</li>
-						</ul>
-					</div>
-					<div class="foot-nav-col">
-						<h3>
-							帮助
-						</h3>
-						<ul>
-							<li>
-								<a href="//about.qiushibaike.com/feedback.html" target="_blank" rel="nofollow">
+                        </li>
+                    </ul>
+                </div>
+                <div class="foot-nav-col">
+                    <h3>
+                        帮助
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="//about.qiushibaike.com/feedback.html" target="_blank" rel="nofollow">
 									在线反馈
 								</a>
-							</li>
-							<li>
-								<a href="//about.qiushibaike.com/touch_agreement.html" target="_blank" rel="nofollow">
+                        </li>
+                        <li>
+                            <a href="//about.qiushibaike.com/touch_agreement.html" target="_blank" rel="nofollow">
 									用户协议
 								</a>
-							</li>
-							<li>
-								<a href="//about.qiushibaike.com/law/privacy.html" target="_blank" rel="nofollow">
+                        </li>
+                        <li>
+                            <a href="//about.qiushibaike.com/law/privacy.html" target="_blank" rel="nofollow">
 									隐私政策
 								</a>
-							</li>
-						</ul>
-					</div>
-					<div class="foot-nav-col">
-						<h3>
-							关注
+                        </li>
+                    </ul>
+                </div>
+                <div class="foot-nav-col">
+                    <h3>
+                        关注
 
-						</h3>
-						<ul>
-							<li>
-								<a href="#" class="foot-wechat">
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#" class="foot-wechat">
 									微信
 
 								</a>
-							</li>
-							<li>
-								<a href="http://weibo.com/qiushibaike" target="_blank" rel="external nofollow">
+                        </li>
+                        <li>
+                            <a href="http://weibo.com/qiushibaike" target="_blank" rel="external nofollow">
 									新浪微博
 								</a>
-							</li>
-							<li>
-								<a href="http://user.qzone.qq.com/1492495058" target="_blank" rel="external nofollow">
+                        </li>
+                        <li>
+                            <a href="http://user.qzone.qq.com/1492495058" target="_blank" rel="external nofollow">
 									QQ空间
 								</a>
-							</li>
-						</ul>
-					</div>
-					<div class="foot-nav-col">
-						<h3>
-							推荐
-						</h3>
-						<ul>
-							<li>
-								<a href="/joke/" target="_blank">
+                        </li>
+                    </ul>
+                </div>
+                <div class="foot-nav-col">
+                    <h3>
+                        推荐
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="/joke/" target="_blank">
 									搞笑合集
 								</a>
-							</li>
-							<li>
-								<a href="/history/" target="_blank">
+                        </li>
+                        <li>
+                            <a href="/history/" target="_blank">
 									历史回顾
 								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="foot-copyrights">
-					<p><a style="color:#333" href="https://beian.miit.gov.cn">互联网ICP备案：京ICP备14028348号-1</a></p>
-					<p>
-						<span>广播电视节目制作经营许可证：（京）字第08319号</span>
-						<span>网络文化经营许可证：
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot-copyrights">
+                <p><a style="color:#333" href="https://beian.miit.gov.cn">互联网ICP备案：京ICP备14028348号-1</a></p>
+                <p>
+                    <span>广播电视节目制作经营许可证：（京）字第08319号</span>
+                    <span>网络文化经营许可证：
 							<img src="//static.qiushibaike.com/images/wenhuajingying.png?v=f5f3976cf4be787ad2be202a19d40823" style="width: 20px; height: 20px; vertical-align: top;">京网文[2020]0625-100号
 						</span>
-					</p>
-					<p style="margin-top: 8px">增值电信业务经营许可证：京ICP证140448号</p>
-					<!-- <p style="margin-top: 8px"><span>营业性演出许可证：京演(机构)(2018)1940号</span></p> -->
-					<p>
-						<span>计算机信息网络国际联网单位备案：<a style="color:#333" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502031601"
+                </p>
+                <p style="margin-top: 8px">增值电信业务经营许可证：京ICP证140448号</p>
+                <!-- <p style="margin-top: 8px"><span>营业性演出许可证：京演(机构)(2018)1940号</span></p> -->
+                <p>
+                    <span>计算机信息网络国际联网单位备案：<a style="color:#333" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502031601"
 							 rel="nofollow"><img style="vertical-align: top;" src="//static.qiushibaike.com/images/beian.png?v=d0289dc0a46fc5b15b3363ffa78cf6c7">京公网安备11010502031601号</a></span>
-					</p>
-					<br>
-					<p style="margin-top: 8px">
-						<a style="color:#333" href="https://www.12377.cn/">网上有害信息举报专区</a>
-					</p>
-					<p>
-						<span>违法和不良信息举报电话：18126520579</span>
-						<span>邮箱：kefu@qiushibaike.com</span>
-					</p>
-					<br>
-					<p style="margin-top: 8px">
-						友际无限（北京）科技有限公司
-					</p>
-					<p>
-						<span>© Qiushibaike.com 糗事百科版权所有</span>
-					</p>
-				</div>
-			</div>
-	</body>
+                </p>
+                <br>
+                <p style="margin-top: 8px">
+                    <a style="color:#333" href="https://www.12377.cn/">网上有害信息举报专区</a>
+                </p>
+                <p>
+                    <span>违法和不良信息举报电话：18126520579</span>
+                    <span>邮箱：kefu@qiushibaike.com</span>
+                </p>
+                <br>
+                <p style="margin-top: 8px">
+                    友际无限（北京）科技有限公司
+                </p>
+                <p>
+                    <span>© Qiushibaike.com 糗事百科版权所有</span>
+                </p>
+            </div>
+        </div>
+</body>
 
 </html>

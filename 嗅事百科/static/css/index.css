@@ -4,62 +4,65 @@ body {
 }
 
 button {
-	width: 165px;
-	outline: none;
-	height: 50px;
-	background-color: transparent;
-	border: transparent;
-}
-#top{
-	
-	height: 92px;
-	background-color: #ffd52b;
-}
-#top-in{
-	width: 100%;
-	height: 92px;
-
+    width: 165px;
+    outline: none;
+    height: 50px;
+    background-color: transparent;
+    border: transparent;
 }
 
-#topbutton{
-	
-	height: 92px;
-	width: 100px;
-	background-color: transparent;
-	border: transparent;
-	cursor: pointer;
-	font-size: 18px;
-	font-weight: 500;
-}
-#topbutton:hover{
-	background-color:khaki;
+#top {
+    height: 92px;
+    background-color: #ffd52b;
 }
 
-#denglu-button{
-	float: right;
-	height: 92px;
-	width: 100px;
-	background-color: transparent;
-	border: transparent;
-	cursor: pointer;
-	font-size: 18px;
-	font-weight: 800;
+#top-in {
+    width: 100%;
+    height: 92px;
 }
-#dengchu-button{
-	float: right;
-	height: 92px;
-	width: 100px;
-	background-color: transparent;
-	border: transparent;
-	cursor: pointer;
-	font-size: 18px;
-	font-weight: 800;
+
+#topbutton {
+    height: 92px;
+    width: 100px;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
 }
-#dengchu-button:hover{
-	background-color:khaki;
+
+#topbutton:hover {
+    background-color: khaki;
 }
-#denglu-button:hover{
-	background-color:khaki;
+
+#denglu-button {
+    /* float: right;
+    height: 92px;
+    width: 100px;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 800; */
+}
+
+#dengchu-button {
+    /* float: right;
+    height: 92px;
+    width: 100px;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 800; */
+}
+
+#dengchu-button:hover {
+    background-color: khaki;
+}
+
+#denglu-button:hover {
+    background-color: khaki;
 }
 
 
@@ -106,7 +109,8 @@ button {
 /* 右边广告栏 */
 
 .qsub-right-advertising {
-    background-color: #ffffff;;
+    background-color: #ffffff;
+    ;
 }
 
 
@@ -118,8 +122,8 @@ button {
     height: 100%;
 }
 
-#text:hover{
-	color: salmon;
+#text:hover {
+    color: salmon;
 }
 
 
@@ -135,14 +139,15 @@ button {
     width: 100%;
     height: 100%;
 }
+
 .foot {
     width: 100%;
     background: #fff;
     font-size: 14px;
 }
 
-element.style {
-}
+element.style {}
+
 .foot-nav {
     width: 960px;
     margin: 0 auto;
@@ -153,6 +158,7 @@ element.style {
     display: -webkit-flex;
     display: flex;
 }
+
 .foot-copyrights {
     width: 960px;
     padding: 20px 0;
@@ -161,7 +167,7 @@ element.style {
     text-align: center;
     border-top: 1px solid #efefef;
 }
-	
+
 .foot-nav-col {
     display: inline-block;
     -webkit-box-flex: 1;
@@ -169,20 +175,73 @@ element.style {
     -ms-flex: 1;
     flex: 1;
     padding-left: 10%;
-}	
+}
 
 .foot-nav h3 {
     margin: 0 0 8px 0;
     font-size: 18px;
-	
 }
 
-li, ol, ul {
+li,
+ol,
+ul {
     list-style: none;
 }
+
 .foot-nav-col ul li {
     line-height: 1.8;
 }
+
 .foot a {
     color: #666;
+}
+
+.qsub-guanggao {
+    /* position: fixed; */
+    /* right: -1%; */
+    /* width: 250px; */
+    /* height: 700px; */
+    /* overflow-y: scroll; */
+    background-color: #ffda58;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.qsub-top {
+    background-color: #ffda58;
+}
+
+.qsub-top img {
+    height: 40px;
+}
+
+.qsub-colour-pro-font {
+    background: url("https://static.qiushibaike.com/images/web/v4/index_logo.png") no-repeat center top 50%;
+    background-size: 100%;
+    width: 100px;
+    /* height: 100%; */
+    /* margin: 10px; */
+    /* margin-left: 10px; */
+}
+
+.navbar>.container-fluid .navbar-brand {
+    margin-left: 10px;
+}
+
+.icon-bar {
+    background-color: #ffffff;
+}
+
+.navbar-toggle {
+    /* position: relative; */
+    float: right;
+    padding: 0;
+    margin-top: 0;
+    margin-right: 15px;
+    margin-bottom: 0;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    width: 20px;
 }
