@@ -491,7 +491,7 @@ function pagezz() {
 }
 
 function pagezz2() {
-    var size = 5;
+    var size = 3;
     var pagecount = null;
 
     mypost(getvideopost, {}, function(data) {

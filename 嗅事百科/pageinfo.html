@@ -30,6 +30,9 @@
     <link rel="stylesheet" type="text/css" href="static/css/video.css" />
 
     <link rel="stylesheet" type="text/css" href="static/css/pageinfo.css" />
+	
+	<link rel="stylesheet" type="text/css" href="static/layui/css/layui.css" />
+	<script src="static/layui/layui.js" charset="utf-8"></script>
 
     <script src="static/js/pageinfo/pageinfo.js" type="text/javascript" charset="utf-8"></script>
     <script src="static/js/mainJs/Cookies.js" type="text/javascript" charset="utf-8"></script>
@@ -86,13 +89,58 @@
                     <li><a href="javascript:denglu()">注册</a></li>
                 </ul>
             </div>
+			
+			
         </div>
     </nav>
+	
+	<!--模态框-->
+	<div id="motaikuang">
+	    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	        <div class="modal-dialog" style=" margin-bottom: 0.625rem;">
+	            <div class="modal-content">
+	
+	                <div class="layui-upload" style="margin-bottom: 20px; text-align: center;">
+	                    <div class="modal-header" style="margin-bottom:20px;">
+	                        <h5 class="modal-title" id="exampleModalLabel">发布帖子</h5>
+	                    </div>
+	                    <button type="button" class="layui-btn layui-btn-normal" id="testList">选择图片</button> <button type="button" class="layui-btn" id="test5"><i class="layui-icon"></i>选择视频</button>
+	                    <br>
+	                    <br>
+	
+	                    <div class="layui-form-item layui-form-text">
+	                        <label class="layui-form-label" style="width: 100px;">帖子内容:</label>
+	                        <div class="layui-input-block">
+	                            <textarea placeholder="请输入内容" id="Contenttext" id="textContent" class="layui-textarea"></textarea>
+	                        </div>
+	                    </div>
+	
+	                    <div class="layui-upload-list" style="margin-bottom: 100px;">
+	                        <table class="layui-table">
+	                            <thead>
+	                                <tr>
+	                                    <th>文件名</th>
+	                                    <th>大小</th>
+	                                    <th>操作</th>
+	                                </tr>
+	                            </thead>
+	                            <tbody id="demoList"></tbody>
+	                        </table>
+	                    </div>
+	
+	                    <button type="button" class="layui-btn" id="btnupload" style="margin-top: 3%;">开始上传</button>
+	                </div>
+	
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	
 
     <div class="container">
         <div class="row">
             <div class="col-sm-2  hidden-xs hidden-sm" id="col-sm-2" style="">
-
+				
             </div>
             <div class="col-sm-7">
                 <div id="teizinr">

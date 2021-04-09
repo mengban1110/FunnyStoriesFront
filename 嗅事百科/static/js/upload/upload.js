@@ -5,7 +5,7 @@ layui.use('upload', function(){
   var demoListView = $('#demoList')
   upload.render({
     elem: '#test5'
-    ,url: 'http://localhost:8080/FunnyStories/api/post/userpost' //改成您自己的上传接口
+    ,url: 'http://123.57.42.178:8089/FunnyStories/api/post/userpost' //改成您自己的上传接口
     ,accept: 'video'//视频
 	,auto: false
 	,data:{"text":$("#textContent").val(),"token":getCookie("token")}
@@ -162,7 +162,7 @@ layui.use('upload', function(){
 		    // form.append("tm",new Date().getTime());
 		    var index = layer.load(0, {shade: false}); //0代表加载的风格，支持0-2
 		    $.ajax({
-		        url: 'http://localhost:8080/FunnyStories/api/post/userpost',
+		        url: 'http://123.57.42.178:8089/FunnyStories/api/post/userpost',
 		        type: "post",
 		        dataType: "json",
 		        async: false,

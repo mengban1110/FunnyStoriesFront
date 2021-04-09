@@ -1,4 +1,4 @@
-var domain = "https://funnyapi.cn1.utools.club/FunnyStories" //项目domin
+var domain = "http://123.57.42.178:8089/FunnyStories" //项目domin
 
 //2.主页数据
 //1 : 注册
