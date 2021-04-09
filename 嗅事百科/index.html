@@ -74,7 +74,7 @@
                     <li><a href="javascript:sps()">视频</a></li>
                     <li><a href="javascript:rts()">热图</a></li>
                     <li><a href="javascript:dzs()">段子</a></li>
-					<li><a data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">发帖</a></li>
+                    <li><a data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">发帖</a></li>
                     <li><a id="denglu-button" style="display: none;" href="javascript:denglu()">登录</a>
                         <a id="dengchu-button" style="display: none;" href="javascript:dengchu()">登出</a>
                     </li>
@@ -105,57 +105,50 @@
                     <img src="//static.qiushibaike.com/images/web/v4/left_code.png?v=0a1153c06294049ad2da58efa408072e" alt="">
 
                 </div>
+                <!-- <hr class="hidden-sm hidden-md hidden-lg"> -->
+            </div>
+            <!--模态框-->
+            <div id="motaikuang">
+                <button type="button" id="fabutieiz" style="background-color: var(--Frontcolour); border: transparent; font-size: 24px; margin-top: 60px;outline: none;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">发帖</button>
 
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" style=" margin-bottom: 0.625rem;">
+                        <div class="modal-content">
 
+                            <div class="layui-upload" style="margin-bottom: 20px; text-align: center;">
+                                <div class="modal-header" style="margin-bottom:20px;">
+                                    <h5 class="modal-title" id="exampleModalLabel">发布帖子</h5>
+                                </div>
+                                <button type="button" class="layui-btn layui-btn-normal" id="testList">选择图片</button> <button type="button" class="layui-btn" id="test5"><i class="layui-icon"></i>选择视频</button>
+                                <br>
+                                <br>
 
-                <!--模态框-->
-                <div id="motaikuang">
-                    <button type="button" id="fabutieiz" style="background-color: var(--Frontcolour); border: transparent; font-size: 24px; margin-top: 60px;outline: none;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">发帖</button>
-
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" style="width: 1000px; margin-bottom: 0.625rem;">
-                            <div class="modal-content">
-
-                                <div class="layui-upload" style="margin-bottom: 20px; text-align: center;">
-                                    <div class="modal-header" style="margin-bottom:20px;">
-                                        <h5 class="modal-title" id="exampleModalLabel">发布帖子</h5>
+                                <div class="layui-form-item layui-form-text">
+                                    <label class="layui-form-label" style="width: 100px;">帖子内容:</label>
+                                    <div class="layui-input-block">
+                                        <textarea placeholder="请输入内容" id="Contenttext" id="textContent" class="layui-textarea"></textarea>
                                     </div>
-                                    <button type="button" class="layui-btn layui-btn-normal" id="testList">选择图片</button> <button type="button" class="layui-btn" id="test5"><i class="layui-icon"></i>选择视频</button>
-                                    <br>
-                                    <br>
-
-                                    <div class="layui-form-item layui-form-text">
-                                        <label class="layui-form-label" style="width: 100px;">帖子内容:</label>
-                                        <div class="layui-input-block">
-                                            <textarea placeholder="请输入内容" id="Contenttext" id="textContent" class="layui-textarea"></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="layui-upload-list" style="margin-bottom: 100px;">
-                                        <table class="layui-table">
-                                            <thead>
-                                                <tr>
-                                                    <th>文件名</th>
-                                                    <th>大小</th>
-                                                    <th>操作</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="demoList"></tbody>
-                                        </table>
-                                    </div>
-
-                                    <button type="button" class="layui-btn" id="btnupload" style="margin-top: 3%;">开始上传</button>
                                 </div>
 
+                                <div class="layui-upload-list" style="margin-bottom: 100px;">
+                                    <table class="layui-table">
+                                        <thead>
+                                            <tr>
+                                                <th>文件名</th>
+                                                <th>大小</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="demoList"></tbody>
+                                    </table>
+                                </div>
+
+                                <button type="button" class="layui-btn" id="btnupload" style="margin-top: 3%;">开始上传</button>
                             </div>
+
                         </div>
                     </div>
                 </div>
-
-
-
-
-                <!-- <hr class="hidden-sm hidden-md hidden-lg"> -->
             </div>
             <div class="col-sm-7">
 
