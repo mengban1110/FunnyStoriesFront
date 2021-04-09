@@ -414,7 +414,7 @@ function shifoudl() {
     } else {
         $("#denglu-button").css("display", "none");
         $("#dengchu-button").css("display", "");
-        $("#userxx").css("display", "inline");
+        // $("#userxx").css("display", "inline");
         $("#userxx").append(userjbxx(getCookie("uid"), getCookie("username"), getCookie("useravatar")));
     }
 }
