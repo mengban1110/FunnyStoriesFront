@@ -481,17 +481,14 @@ function guanbi() {
     }, "GET")
 }
 
-
 function shifoudl() {
     if ((getCookie("username") == null || getCookie("username") == "") || (getCookie("useravatar") == null || getCookie("useravatar") == "") || (getCookie("token") == null || getCookie("token") == "")) {
-
-        // $("#denglu-button").css("display", "inline");
+        $("#denglu-button").css("display", "");
         $("#dengchu-button").css("display", "none");
         $("#userxx").css("display", "none");
     } else {
-
         $("#denglu-button").css("display", "none");
-        // $("#dengchu-button").css("display", "inline");
+        $("#dengchu-button").css("display", "");
         $("#userxx").css("display", "inline");
         $("#userxx").append(userjbxx(getCookie("uid"), getCookie("username"), getCookie("useravatar")));
     }
